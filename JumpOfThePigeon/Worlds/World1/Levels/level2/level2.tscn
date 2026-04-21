@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://bq1ki8o1makyq" path="res://JumpOfThePigeon/objetos/elementos/scripts/elementos_globais.gd" id="5_nw2df"]
 [ext_resource type="AudioStream" uid="uid://c08mai12q63hx" path="res://JumpOfThePigeon/objetos/mapa/sounds/Oficial.mp3" id="6_shg31"]
 [ext_resource type="Script" uid="uid://b0s31ju4e5l14" path="res://JumpOfThePigeon/objetos/mapa/scripts/normal_map.gd" id="8_lvwru"]
-[ext_resource type="PackedScene" uid="uid://dmg8gaqu60dw0" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/espreitador.tscn" id="8_q0avi"]
 [ext_resource type="PackedScene" uid="uid://dbq8bn46up270" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/background.tscn" id="9_rcnya"]
 [ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/normal_map/norma_tilemap.tscn" id="10_lakh6"]
 [ext_resource type="PackedScene" uid="uid://cnbkajtr1t6hg" path="res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/luz_global.tscn" id="11_4txcu"]
@@ -17,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://d17d0rbiert8d" path="res://JumpOfThePigeon/objetos/mapa/sounds/deep.mp3" id="16_yx52s"]
 [ext_resource type="Script" uid="uid://bkn4nwgfx81gv" path="res://JumpOfThePigeon/objetos/Interface/scripts/transições.gd" id="17_15tax"]
 [ext_resource type="PackedScene" uid="uid://e0k0h4ncsrjw" path="res://JumpOfThePigeon/objetos/Interface/transições.tscn" id="18_kg1kv"]
+[ext_resource type="PackedScene" uid="uid://bjx6cav87w5fq" path="res://JumpOfThePigeon/objetos/inimigos/espinhos/espinhos.tscn" id="18_q0avi"]
 
 [sub_resource type="Gradient" id="Gradient_d3o83"]
 offsets = PackedFloat32Array(0, 0.51293105, 1)
@@ -68,8 +68,15 @@ script = ExtResource("8_lvwru")
 
 [node name="inimigos" type="Node2D" parent="map/normal_map/elementos" unique_id=232660135]
 
-[node name="enemy" parent="map/normal_map/elementos/inimigos" unique_id=711407830 instance=ExtResource("8_q0avi")]
-position = Vector2(293, -30)
+[node name="espreitadores" type="Node2D" parent="map/normal_map/elementos/inimigos" unique_id=1147040195]
+
+[node name="espinhos" type="Node2D" parent="map/normal_map/elementos/inimigos" unique_id=1320998989]
+
+[node name="espinhos" parent="map/normal_map/elementos/inimigos/espinhos" unique_id=760903391 instance=ExtResource("18_q0avi")]
+position = Vector2(544, 304)
+
+[node name="espinhos2" parent="map/normal_map/elementos/inimigos/espinhos" unique_id=1740125176 instance=ExtResource("18_q0avi")]
+position = Vector2(706, 336)
 
 [node name="tileMap" parent="map/normal_map" unique_id=373199258 instance=ExtResource("10_lakh6")]
 
@@ -97,13 +104,6 @@ position = Vector2(384, 253)
 rotation = -0.344769
 scale = Vector2(9.557408, 11.003679)
 energy = 0.2
-range_layer_min = -1
-texture = SubResource("GradientTexture2D_xdcmn")
-
-[node name="PointLight2D2" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo2" unique_id=1712658633]
-position = Vector2(934, 199.00003)
-rotation = -0.344769
-scale = Vector2(9.557408, 11.003679)
 range_layer_min = -1
 texture = SubResource("GradientTexture2D_xdcmn")
 
@@ -172,9 +172,9 @@ stream = ExtResource("16_yx52s")
 script = ExtResource("17_15tax")
 
 [node name="Transições" parent="transições" unique_id=409224042 instance=ExtResource("18_kg1kv")]
+visible = false
 
 [node name="ColorRect" parent="transições/Transições" index="0" unique_id=1042860171]
-visible = false
 color = Color(0.16, 0.09616, 0.0688, 1)
 
 [node name="saída" type="Area2D" parent="transições" unique_id=1700254749]
@@ -186,10 +186,13 @@ position = Vector2(58.25, 44)
 shape = SubResource("RectangleShape2D_movij")
 debug_color = Color(0, 0.5950001, 0.7, 0.7490196)
 
-[connection signal="kill" from="map/normal_map/elementos/inimigos/enemy" to="." method="_on_enemy_kill"]
+[connection signal="body_entered" from="map/normal_map/elementos/inimigos/espinhos/espinhos/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="map/normal_map/elementos/inimigos/espinhos/espinhos2/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="transições/saída" to="." method="_on_saída_body_entered"]
 
 [editable path="map/camera_move"]
+[editable path="map/normal_map/elementos/inimigos/espinhos/espinhos"]
+[editable path="map/normal_map/elementos/inimigos/espinhos/espinhos2"]
 [editable path="map/normal_map/tileMap"]
 [editable path="map/other_map/tileMap"]
 [editable path="transições/Transições"]

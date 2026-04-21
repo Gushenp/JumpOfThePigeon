@@ -1,5 +1,9 @@
-AnimationPlayer
 Node2D
+Area2D
+CollisionShape2D
+Sprite2D
+StaticBody2D
+AnimationPlayer
 AnimationTree
 Panel
 TextureRect
@@ -8,7 +12,3 @@ ColorRect
 HBoxContainer
 Label
 Container
-VBoxContainer
-CollisionShape2D
-Area2D
-ParallaxLayer
