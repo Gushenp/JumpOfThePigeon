@@ -1,17 +1,10 @@
 [gd_scene format=3 uid="uid://bjx6cav87w5fq"]
 
-[ext_resource type="Texture2D" uid="uid://bgk6x51uvalfl" path="res://JumpOfThePigeon/objetos/inimigos/espinhos/sprites/pixil-frame-0.png" id="1_v8bss"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be753"]
-size = Vector2(58, 20)
+size = Vector2(66.25, 23.5)
 
-[node name="espinhos" type="StaticBody2D" unique_id=760903391]
+[node name="espinhos" type="Area2D" unique_id=1627316099]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138028824]
-texture = ExtResource("1_v8bss")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1172882125]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1016542844]
-position = Vector2(-1, 6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1016542844]
 shape = SubResource("RectangleShape2D_be753")
+debug_color = Color(0.7869024, 0, 0.04407032, 0.41960785)

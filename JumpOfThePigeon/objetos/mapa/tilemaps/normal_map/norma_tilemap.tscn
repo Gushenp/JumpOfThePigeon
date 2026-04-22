@@ -185,6 +185,22 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_yxnn2")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxc8h"]
+texture = ExtResource("1_5ugrq")
+texture_region_size = Vector2i(32, 32)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+7:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hqtuv"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_qxc8h")
+
 [node name="normal_tilemap" type="Node2D" unique_id=373199258]
 
 [node name="solo" type="TileMapLayer" parent="." unique_id=697564108]
@@ -211,3 +227,6 @@ tile_set = SubResource("TileSet_01sad")
 self_modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
 z_index = 1
 tile_set = SubResource("TileSet_36l22")
+
+[node name="espinhos" type="TileMapLayer" parent="." unique_id=665947107]
+tile_set = SubResource("TileSet_hqtuv")

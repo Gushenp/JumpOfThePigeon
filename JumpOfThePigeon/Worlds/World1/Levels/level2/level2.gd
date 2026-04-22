@@ -55,6 +55,6 @@ func _on_enemy_kill() -> void:
 	pass 
 
 # == Espinhos ==
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+func _on_espinhos_body_entered(body: CharacterBody2D) -> void:
 	_on_enemy_kill()
 	pass # Replace with function body.

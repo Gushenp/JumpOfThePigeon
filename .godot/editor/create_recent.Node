@@ -1,5 +1,6 @@
-Node2D
 Area2D
+TileMapLayer
+Node2D
 CollisionShape2D
 Sprite2D
 StaticBody2D
@@ -11,4 +12,3 @@ AspectRatioContainer
 ColorRect
 HBoxContainer
 Label
-Container
