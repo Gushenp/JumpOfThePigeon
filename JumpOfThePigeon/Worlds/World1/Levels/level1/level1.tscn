@@ -16,8 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dxynd1v4ma40y" path="res://JumpOfThePigeon/objetos/elementos/Placa/placa.tscn" id="11_74sll"]
 [ext_resource type="PackedScene" uid="uid://yfe51b4xinoh" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/other_map/other_tilemap.tscn" id="11_adbjf"]
 [ext_resource type="AudioStream" uid="uid://d17d0rbiert8d" path="res://JumpOfThePigeon/objetos/mapa/sounds/deep.mp3" id="12_5v1ei"]
-[ext_resource type="PackedScene" uid="uid://e0k0h4ncsrjw" path="res://JumpOfThePigeon/objetos/Interface/transições.tscn" id="13_opmjp"]
-[ext_resource type="Script" uid="uid://bkn4nwgfx81gv" path="res://JumpOfThePigeon/objetos/Interface/scripts/transições.gd" id="16_3so28"]
+[ext_resource type="PackedScene" uid="uid://l18b1u3sutnu" path="res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/ponto_de_reflexo.tscn" id="12_n5omb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5omb"]
 size = Vector2(37, 158)
@@ -28,15 +27,15 @@ size = Vector2(20, 159)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f65et"]
 size = Vector2(105, 199)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3so28"]
+size = Vector2(27, 107)
+
 [sub_resource type="Gradient" id="Gradient_d3o83"]
 offsets = PackedFloat32Array(0, 0.51293105, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sk2gc"]
 gradient = SubResource("Gradient_d3o83")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_movij"]
-size = Vector2(133.5, 105)
 
 [node name="level_1" type="Node2D" unique_id=926925272]
 light_mask = 1023
@@ -121,6 +120,15 @@ offset_right = 81.0
 [node name="Label" parent="map/elementos_globais/placas/frog plate3/dialog box/VBoxContainer" index="0" unique_id=988161412]
 text = "Você também pode planar!!!"
 
+[node name="saída" type="Area2D" parent="map/elementos_globais" unique_id=359768279]
+position = Vector2(-115, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/elementos_globais/saída" unique_id=873205123]
+z_index = 2
+position = Vector2(2243.5, 205.5)
+shape = SubResource("RectangleShape2D_3so28")
+debug_color = Color(0.5213896, 0.71340245, 0, 0.41960785)
+
 [node name="normal_map" type="Node2D" parent="map" unique_id=1634348116]
 modulate = Color(0.9164794, 0.8136174, 0.6144423, 1)
 light_mask = 1023
@@ -161,13 +169,8 @@ range_item_cull_mask = 3
 
 [node name="pontos_reflexo" type="Node2D" parent="map/normal_map/luz_e_sombra" unique_id=1624409567]
 
-[node name="PointLight2D" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1578810614]
+[node name="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=518103116 instance=ExtResource("12_n5omb")]
 position = Vector2(355.00003, 227)
-rotation = -0.344769
-scale = Vector2(9.557408, 11.003679)
-energy = 0.2
-range_layer_min = -1
-texture = SubResource("GradientTexture2D_sk2gc")
 
 [node name="PointLight2D5" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1268878612]
 position = Vector2(700.00006, 257.00006)
@@ -287,30 +290,13 @@ script = ExtResource("11_5b2id")
 [node name="deep" type="AudioStreamPlayer" parent="map/other_map/audios" unique_id=1670742541]
 stream = ExtResource("12_5v1ei")
 
-[node name="transições" type="Node2D" parent="." unique_id=969052579]
-script = ExtResource("16_3so28")
-
-[node name="Transições" parent="transições" unique_id=409224042 instance=ExtResource("13_opmjp")]
-
-[node name="ColorRect" parent="transições/Transições" index="0" unique_id=1042860171]
-color = Color(0.16078432, 0.09803922, 0.07058824, 1)
-
-[node name="saída" type="Area2D" parent="transições" unique_id=1700254749]
-position = Vector2(2148, 162)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transições/saída" unique_id=1310903060]
-z_index = 1
-position = Vector2(58.25, 44)
-shape = SubResource("RectangleShape2D_movij")
-debug_color = Color(0, 0.5950001, 0.7, 0.7490196)
-
 [connection signal="body_entered" from="map/camera_move/move1" to="player/camera" method="_on_move_1_body_entered"]
 [connection signal="body_exited" from="map/camera_move/move1" to="player/camera" method="_on_move_1_body_exited"]
 [connection signal="body_entered" from="map/camera_move/move2" to="player/camera" method="_on_move_2_body_entered"]
 [connection signal="body_exited" from="map/camera_move/move2" to="player/camera" method="_on_move_2_body_exited"]
 [connection signal="body_entered" from="map/camera_move/move3" to="player/camera" method="_on_move_3_body_entered"]
 [connection signal="body_exited" from="map/camera_move/move3" to="player/camera" method="_on_move_3_body_exited"]
-[connection signal="body_entered" from="transições/saída" to="." method="_on_saída_body_entered"]
+[connection signal="body_entered" from="map/elementos_globais/saída" to="." method="_on_saída_body_entered"]
 
 [editable path="map/camera_move"]
 [editable path="map/elementos_globais/placas/frog plate"]
@@ -318,4 +304,3 @@ debug_color = Color(0, 0.5950001, 0.7, 0.7490196)
 [editable path="map/elementos_globais/placas/frog plate3"]
 [editable path="map/normal_map/tileMap"]
 [editable path="map/other_map/tileMap"]
-[editable path="transições/Transições"]

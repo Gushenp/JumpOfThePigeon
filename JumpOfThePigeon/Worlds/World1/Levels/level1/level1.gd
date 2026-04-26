@@ -6,7 +6,7 @@ extends Node2D
 @onready var normal_map = $map/normal_map
 @onready var other_map = $map/other_map
 @onready var camera = $player/camera
-@onready var transicao = $"transições"
+@onready var oficialMusic = $map/elementos_globais/audios/oficial_music 
 
 # ===== Variáveis de controle ======
 var is_in_normal_map = true
@@ -18,16 +18,14 @@ func _ready() -> void:
 	pass 
 
 func _start():
-	$map/normal_map/audios/nature.play()
-	elementos_globais._desativar_areas()
-	elementos_globais._desativar_sons()
+	GlobalAudio._fadeIn(oficialMusic, 2.0, 0)
 	player._desativar_sons()
-	transicao._animacao_fade_in()
+	elementos_globais._desativar_sons()
+	elementos_globais._desativar_areas()
+	TransiçãoGlobal._animacao_fade_in(0)
 	await get_tree().create_timer(1.5).timeout
-	menager_music_world1.get_node("JumpOfThePigeon").play()
-	MenagerBackgroundtransition.hide()
-	elementos_globais._reativar_areas()
 	elementos_globais._reativar_sons()
+	elementos_globais._reativar_areas()
 	player._reativar_sons()
 
 # ==== Mudar realidade =====
@@ -43,9 +41,8 @@ func _change_reality():
 
 func _on_saída_body_entered(body: Node2D) -> void:
 	if body == player:
-		transicao._animacao_fade_out()
-		menager_music_world1._saida_musica()
+		TransiçãoGlobal._animacao_fade_out()
+		GlobalAudio._fadeOut(oficialMusic, 6.0)
 		await get_tree().create_timer(2.3).timeout
-		MenagerBackgroundtransition.show()
 		get_tree().change_scene_to_file("res://JumpOfThePigeon/Worlds/World1/Levels/level2/level2.tscn")
 	pass 

@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://e0k0h4ncsrjw"]
+[gd_scene format=3 uid="uid://cjf12w2hu2y8w"]
 
-[ext_resource type="Shader" uid="uid://00cvlveynfd6" path="res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader" id="1_1fn1q"]
-[ext_resource type="AudioStream" uid="uid://b17pr112h08uf" path="res://JumpOfThePigeon/objetos/player/sounds/grunido.mp3" id="2_wiabv"]
-[ext_resource type="AudioStream" uid="uid://cmslkayw182nl" path="res://JumpOfThePigeon/objetos/Interface/sons/saida.mp3" id="2_xc4rr"]
+[ext_resource type="Script" uid="uid://bkn4nwgfx81gv" path="res://JumpOfThePigeon/objetos/Interface/scripts/transições.gd" id="1_8m1wx"]
+[ext_resource type="Shader" uid="uid://00cvlveynfd6" path="res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader" id="2_5au50"]
+[ext_resource type="AudioStream" uid="uid://cmslkayw182nl" path="res://JumpOfThePigeon/objetos/Interface/sons/saida.mp3" id="3_byv4y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xc4rr"]
-shader = ExtResource("1_1fn1q")
+shader = ExtResource("2_5au50")
 shader_parameter/screen_width = 1920.0
 shader_parameter/screen_height = 1080.0
 shader_parameter/center = Vector2(0.5, 0.5)
@@ -33,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../sound/saída:pitch_scale")
+tracks/1/path = NodePath("../../Audio_Exit:pitch_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -61,7 +61,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../sound/saída:playing")
+tracks/1/path = NodePath("../../Audio_Exit:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -73,7 +73,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../sound/saída:pitch_scale")
+tracks/2/path = NodePath("../../Audio_Exit:pitch_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -101,7 +101,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../sound/saída:playing")
+tracks/1/path = NodePath("../../Audio_Exit:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -113,7 +113,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../sound/saída:pitch_scale")
+tracks/2/path = NodePath("../../Audio_Exit:pitch_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -130,9 +130,12 @@ _data = {
 &"fade_out": SubResource("Animation_r0leo")
 }
 
-[node name="Transições" type="CanvasLayer" unique_id=409224042]
+[node name="GlobalTransition" type="Node2D" unique_id=945515491]
+script = ExtResource("1_8m1wx")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1042860171]
+[node name="Canvas_ransition" type="CanvasLayer" parent="." unique_id=409224042]
+
+[node name="ColorRect" type="ColorRect" parent="Canvas_ransition" unique_id=1042860171]
 material = SubResource("ShaderMaterial_xc4rr")
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,12 +145,9 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1777580747]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas_ransition/ColorRect" unique_id=1777580747]
 libraries/ = SubResource("AnimationLibrary_wiabv")
 
-[node name="sound" type="AudioStreamPlayer2D" parent="." unique_id=1055497455]
-stream = ExtResource("2_wiabv")
-
-[node name="saída" type="AudioStreamPlayer" parent="sound" unique_id=1615218177]
-stream = ExtResource("2_xc4rr")
+[node name="Audio_Exit" type="AudioStreamPlayer" parent="." unique_id=1615218177]
+stream = ExtResource("3_byv4y")
 pitch_scale = 0.9
