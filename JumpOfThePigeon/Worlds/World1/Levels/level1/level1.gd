@@ -18,15 +18,13 @@ func _ready() -> void:
 	pass 
 
 func _start():
-	GlobalAudio._fadeIn(oficialMusic, 2.0, 0)
-	player._desativar_sons()
-	elementos_globais._desativar_sons()
-	elementos_globais._desativar_areas()
-	TransiçãoGlobal._animacao_fade_in(0)
+	GlobalTransition.animation_fade_in(oficialMusic, -15, 3.0)
+	GlobalAudio.disable_sound_node(player)
+	GlobalAudio.disable_sound_node(elementos_globais)
 	await get_tree().create_timer(1.5).timeout
-	elementos_globais._reativar_sons()
-	elementos_globais._reativar_areas()
-	player._reativar_sons()
+	GlobalAudio.enable_sound_node(player, 0)
+	GlobalAudio.enable_sound_node(elementos_globais, 0)
+	GlobalStateController.disable_collisions(elementos_globais)
 
 # ==== Mudar realidade =====
 func _change_reality():
@@ -41,7 +39,7 @@ func _change_reality():
 
 func _on_saída_body_entered(body: Node2D) -> void:
 	if body == player:
-		TransiçãoGlobal._animacao_fade_out()
+		GlobalTransition.animation_fade_out(oficialMusic, -80, 4.0)
 		GlobalAudio._fadeOut(oficialMusic, 6.0)
 		await get_tree().create_timer(2.3).timeout
 		get_tree().change_scene_to_file("res://JumpOfThePigeon/Worlds/World1/Levels/level2/level2.tscn")

@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Jump Of The Pigeon"
-run/main_scene="uid://bxp0i42rotfuo"
+run/main_scene="uid://byqlmbwidf7f8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
 GlobalTransition="*uid://cjf12w2hu2y8w"
+GlobalAudio="*uid://exm0bjycd5lk"
+GlobalStateController="*uid://cm4coxcl7utx1"
 
 [display]
 

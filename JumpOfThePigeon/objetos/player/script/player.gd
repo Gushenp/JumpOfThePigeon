@@ -153,27 +153,3 @@ func _reativar_realidade():
 	
 func _desativar_colisoes():
 	$CollisionShape2D.queue_free()
-#==================================
-# ==== Desativar e ativar sons ====
-#==================================
-func _desativar_sons():
-	for child in player.get_children():
-		_desativar_sons_recursivo(child)
-
-func _desativar_sons_recursivo(node):
-	if node is AudioStreamPlayer:
-		node.volume_db = -200
-		
-	for child in node.get_children():
-		_desativar_sons_recursivo(child)
-
-func _reativar_sons():
-	for child in player.get_children():
-		_reativar_sons_recursivo(child)
-
-func _reativar_sons_recursivo(node):
-	if node is AudioStreamPlayer:
-		node.volume_db = 0
-		
-	for child in node.get_children():
-		_reativar_sons_recursivo(child)
