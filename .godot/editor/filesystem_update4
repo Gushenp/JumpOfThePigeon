@@ -1,9 +1,13 @@
-res://JumpOfThePigeon/Worlds/World1/Levels/level1/level1.tscn
+res://JumpOfThePigeon/objetos/elementos/Placa/placa.tscn
 res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader
 res://JumpOfThePigeon/objetos/mapa/tilemaps/background.gdshader
 res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_x.gdshader
 res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_y.gdshader
 res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/pendentes.gdshader
 res://JumpOfThePigeon/Elementos Globais/GlobalStateController.gd
-res://JumpOfThePigeon/Worlds/World1/Levels/level1/level1.gd
 res://JumpOfThePigeon/objetos/elementos/Placa/scripts/placa.gd
+res://JumpOfThePigeon/Worlds/World1/Levels/level1/level1.gd
+res://JumpOfThePigeon/objetos/player/script/player.gd
+res://JumpOfThePigeon/Worlds/World1/Levels/level1/level1.tscn
+res://JumpOfThePigeon/objetos/player/player.tscn
+res://JumpOfThePigeon/objetos/Interface/scripts/transições.gd

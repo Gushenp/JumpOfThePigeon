@@ -3,18 +3,13 @@ extends Node
 func _disable_visibility(root:Node):
 	root.hide()
 
-func disable_collisions(root:Node):
-	if root.has_method("ed_gravity"):
-		root.ed_gravity(false)
-		
-	for node in root.find_children("*", "", true, false):
-		if node is CollisionShape2D or node is CollisionPolygon2D:
-			node.disabled = true
+func change_property(node: Node, property: String, value) -> void:
+	if property in node:
+		node.set(property, value)
+	
+	for child in node.get_children():
+		if property in child:
+			child.set(property, value)
 			
-		elif node is PhysicsBody2D:
-			node.set_collision_layer(0)
-			node.set_collision_mask(0)
-			
-		elif node is Area2D:
-			node.monitoring = false
-			node.monitorable = false
+		if child.get_child_count() > 0:
+			change_property(child, property, value)		

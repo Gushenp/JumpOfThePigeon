@@ -146,7 +146,6 @@ shape = SubResource("RectangleShape2D_jwwo0")
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_oe2k1")
 animation = &"sleep"
-frame_progress = 0.94775164
 
 [node name="Audio" type="Node2D" parent="." unique_id=795854979]
 

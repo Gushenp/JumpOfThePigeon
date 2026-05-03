@@ -4,7 +4,7 @@ extends Node2D
 @onready var audio_exit = $Audio_Exit
 
 func _ready() -> void:
-	$Canvas_transition. visible = false
+	$Canvas_transition.visible = false
 
 # animation control
 func animation_fade_in(audio:AudioStreamPlayer, volumeDB:float, time:float) -> void:

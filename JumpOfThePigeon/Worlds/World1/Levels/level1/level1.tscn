@@ -12,10 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cnbkajtr1t6hg" path="res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/luz_global.tscn" id="8_vy50r"]
 [ext_resource type="PackedScene" uid="uid://5pb1rwokd86e" path="res://JumpOfThePigeon/objetos/mapa/particulas/normal_map/folhas.tscn" id="9_f65et"]
 [ext_resource type="AudioStream" uid="uid://djcboj6dm0htc" path="res://JumpOfThePigeon/objetos/mapa/sounds/nature.mp3" id="10_ydfbt"]
-[ext_resource type="Script" uid="uid://j6bqgdmbxs08" path="res://JumpOfThePigeon/objetos/mapa/scripts/other_map.gd" id="11_5b2id"]
 [ext_resource type="PackedScene" uid="uid://dxynd1v4ma40y" path="res://JumpOfThePigeon/objetos/elementos/Placa/placa.tscn" id="11_74sll"]
-[ext_resource type="PackedScene" uid="uid://yfe51b4xinoh" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/other_map/other_tilemap.tscn" id="11_adbjf"]
-[ext_resource type="AudioStream" uid="uid://d17d0rbiert8d" path="res://JumpOfThePigeon/objetos/mapa/sounds/deep.mp3" id="12_5v1ei"]
 [ext_resource type="PackedScene" uid="uid://l18b1u3sutnu" path="res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/ponto_de_reflexo.tscn" id="12_n5omb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5omb"]
@@ -267,29 +264,6 @@ color = Color(0.9603465, 0.6459293, 0.3376174, 1)
 stream = ExtResource("10_ydfbt")
 volume_db = -8.667
 
-[node name="other_map" type="Node2D" parent="map" unique_id=1527810247]
-modulate = Color(0.9164794, 0.8136174, 0.6144423, 1)
-light_mask = 1023
-visibility_layer = 1023
-script = ExtResource("11_5b2id")
-
-[node name="background" type="Node2D" parent="map/other_map" unique_id=1996639331]
-
-[node name="tileMap" parent="map/other_map" unique_id=1306080712 instance=ExtResource("11_adbjf")]
-
-[node name="luz_e_sombra" type="Node2D" parent="map/other_map" unique_id=310826838]
-
-[node name="pontos_reflexo" type="Node2D" parent="map/other_map/luz_e_sombra" unique_id=1078260886]
-
-[node name="pontos_luz" type="Node2D" parent="map/other_map/luz_e_sombra" unique_id=613272087]
-
-[node name="particulas" type="Node2D" parent="map/other_map" unique_id=672027227]
-
-[node name="audios" type="Node2D" parent="map/other_map" unique_id=1673540938]
-
-[node name="deep" type="AudioStreamPlayer" parent="map/other_map/audios" unique_id=1670742541]
-stream = ExtResource("12_5v1ei")
-
 [connection signal="body_entered" from="map/camera_move/move1" to="player/camera" method="_on_move_1_body_entered"]
 [connection signal="body_exited" from="map/camera_move/move1" to="player/camera" method="_on_move_1_body_exited"]
 [connection signal="body_entered" from="map/camera_move/move2" to="player/camera" method="_on_move_2_body_entered"]
@@ -303,4 +277,3 @@ stream = ExtResource("12_5v1ei")
 [editable path="map/elementos_globais/placas/frog plate2"]
 [editable path="map/elementos_globais/placas/frog plate3"]
 [editable path="map/normal_map/tileMap"]
-[editable path="map/other_map/tileMap"]

@@ -12,7 +12,7 @@ signal talk_placa
 # ==== control variables ====
 @onready var gravidade = 986.0
 var is_active = false
-var gravidade_ativada = true
+var is_gravity = true
 
 func _ready() -> void:
 	animations_sing()
@@ -35,12 +35,12 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 # ==== body changes=====
 func _gravity(delta):
-	if not is_on_floor() and gravidade_ativada:
+	if not is_on_floor() and is_gravity:
 		velocity.y += gravidade * delta
 		sounds_to_land()
 		
 func jump():
-	if is_on_floor() and gravidade_ativada:
+	if is_on_floor() and is_gravity:
 		velocity.y = -230
 
 func animations_sing():
@@ -77,11 +77,3 @@ func sounds_talk():
 func sounds_to_land():
 	$sounds/Aterrisar.play()
 	$sounds/AterrisarAmbiente.play()
-
-# == external commands ==
-
-func ed_gravity(value:bool):
-	if value:
-		gravidade_ativada = true
-	else:
-		gravidade_ativada = false

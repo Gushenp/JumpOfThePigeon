@@ -19,19 +19,29 @@ extends CharacterBody2D
 var isDeath = false
 var gravidade = 986.0
 var gravidade_planando = 200.0
+var is_control_active = true
+#var condition_gravity = true
+#var condiction_control = true
 # ====== Processos iniciais ========
 func _ready() -> void:
 	posicao_inicial = player.global_position
 
 # ===== Processo de Quadros ======
 func _physics_process(delta: float) -> void:
-	_player_jump()
+	_player_controls()
 	_gravity(delta)
-	_player_direction(delta)
-	_animacao_player()
-	_player_change_reality()
-	_audio_player()
 	move_and_slide()
+
+# ===== Funções Gerais =====
+func _player_controls():
+	if is_control_active:
+		_player_jump()
+		_player_direction()
+		_animacao_player()
+		_player_change_reality()
+		_audio_player()
+	else:
+		return
 
 # ===== Adicionar Gravidade =====
 func _gravity(delta):
@@ -58,13 +68,12 @@ func _player_jump():
 		pulos_restantes -= 1
 
 # ====== Movimentação Player =======
-func _player_direction(delta):
-	var direction = Input.get_axis("left", "right")
-	if isDeath == false: 
-		if direction != 0:
-			velocity.x = direction * SPEED
-		else: 
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+func _player_direction():
+	if isDeath:
+		return
+		
+	var direction := Input.get_axis("left", "right")
+	velocity.x = direction * SPEED if direction != 0 else move_toward(velocity.x, 0, SPEED)
 
 # ======= Mudar de Realidade =======
 signal change_reality
