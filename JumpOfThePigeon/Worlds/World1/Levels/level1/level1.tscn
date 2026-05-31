@@ -27,6 +27,9 @@ size = Vector2(105, 199)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3so28"]
 size = Vector2(27, 107)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lxtq"]
+size = Vector2(2087, 20)
+
 [sub_resource type="Gradient" id="Gradient_d3o83"]
 offsets = PackedFloat32Array(0, 0.51293105, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
@@ -125,6 +128,13 @@ z_index = 2
 position = Vector2(2243.5, 205.5)
 shape = SubResource("RectangleShape2D_3so28")
 debug_color = Color(0.5213896, 0.71340245, 0, 0.41960785)
+
+[node name="deathZone" type="Area2D" parent="map/elementos_globais" unique_id=101965229]
+position = Vector2(5, 465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/elementos_globais/deathZone" unique_id=2057538646]
+position = Vector2(1222.5, 0)
+shape = SubResource("RectangleShape2D_5lxtq")
 
 [node name="normal_map" type="Node2D" parent="map" unique_id=1634348116]
 modulate = Color(0.9164794, 0.8136174, 0.6144423, 1)
@@ -271,6 +281,7 @@ volume_db = -8.667
 [connection signal="body_entered" from="map/camera_move/move3" to="player/camera" method="_on_move_3_body_entered"]
 [connection signal="body_exited" from="map/camera_move/move3" to="player/camera" method="_on_move_3_body_exited"]
 [connection signal="body_entered" from="map/elementos_globais/saída" to="." method="_on_saída_body_entered"]
+[connection signal="body_entered" from="map/elementos_globais/deathZone" to="." method="_on_death_zone_body_entered"]
 
 [editable path="map/camera_move"]
 [editable path="map/elementos_globais/placas/frog plate"]

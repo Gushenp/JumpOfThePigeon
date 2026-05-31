@@ -30,3 +30,8 @@ func _on_saída_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(2.3).timeout
 		get_tree().change_scene_to_file("res://JumpOfThePigeon/Worlds/World1/Levels/level2/level2.tscn")
 	pass 
+	
+func _on_death_zone_body_entered(body: CharacterBody2D) -> void:
+	player._eliminar_player()
+	GlobalTransition.animation_fade_out(oficialMusic, -80, 4.0)
+	pass

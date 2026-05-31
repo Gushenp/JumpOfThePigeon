@@ -3,16 +3,16 @@ extends Node2D
 @onready var transition = $Canvas_transition/ColorRect/AnimationPlayer
 @onready var audio_exit = $Audio_Exit
 
-func _ready() -> void:
-	$Canvas_transition.visible = false
-
 # animation control
 func animation_fade_in(audio:AudioStreamPlayer, volumeDB:float, time:float) -> void:
 	_sound_effect()
+	
 	transition.play("fade_in")
 	_music_fade("in", audio, volumeDB, time)
 	
 func animation_fade_out(audio:AudioStreamPlayer,  volumeDB:float, time:float):
+	_sound_effect()
+	
 	_sound_effect()
 	transition.play("fade_out")
 	_music_fade("out", audio, volumeDB, time)

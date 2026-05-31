@@ -137,6 +137,7 @@ func _apply_death():
 	
 	isDeath = true
 	_desativar_colisoes()
+	GlobalTransition.animation_fade_out(flying_sound, 0, 2.0)
 	
 	velocity.y = -400
 	if direction == 1.0:

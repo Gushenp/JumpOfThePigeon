@@ -71,11 +71,14 @@ _data = {
 }
 
 [node name="GlobalTransition" type="Node2D" unique_id=945515491]
+visible = false
 script = ExtResource("1_8m1wx")
 
 [node name="Canvas_transition" type="CanvasLayer" parent="." unique_id=409224042]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Canvas_transition" unique_id=1042860171]
+visible = false
 material = SubResource("ShaderMaterial_xc4rr")
 anchors_preset = 15
 anchor_right = 1.0

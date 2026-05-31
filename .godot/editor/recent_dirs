@@ -1,3 +1,5 @@
+res://JumpOfThePigeon/Worlds/World1/Levels/level2/
+res://JumpOfThePigeon/Worlds/World1/Levels/
 res://JumpOfThePigeon/Elementos Globais/
 res://JumpOfThePigeon/Menu/
 res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/
@@ -6,10 +8,8 @@ res://JumpOfThePigeon/objetos/inimigos/espinhos/
 res://JumpOfThePigeon/Worlds/
 res://JumpOfThePigeon/objetos/mapa/tilemaps/
 res://JumpOfThePigeon/Worlds/World1/
-res://JumpOfThePigeon/Worlds/World1/Levels/level2/
 res://JumpOfThePigeon/Worlds/World1/Levels/level1/
 res://JumpOfThePigeon/objetos/camera/main/
-res://JumpOfThePigeon/objetos/camera/camera_move/scripts/
 res://JumpOfThePigeon/objetos/player/script/
 res://JumpOfThePigeon/objetos/elementos/scripts/
 res://JumpOfThePigeon/objetos/Interface/scripts/
