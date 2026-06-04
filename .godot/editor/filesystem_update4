@@ -1,7 +1,5 @@
-res://JumpOfThePigeon/Elementos Globais/GlobalTransition.tscn
 res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader
 res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_x.gdshader
 res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_y.gdshader
 res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/pendentes.gdshader
 res://JumpOfThePigeon/objetos/mapa/tilemaps/background.gdshader
-res://JumpOfThePigeon/Worlds/World1/Levels/level_2.tscn
