@@ -1,4 +1,5 @@
 PointLight2D
+TileMapLayer
 AnimationPlayer
 Sprite2D
 AnimatedSprite2D
@@ -11,5 +12,3 @@ AudioStreamPlayer
 Label
 VBoxContainer
 HBoxContainer
-TextureRect
-Panel

@@ -16,9 +16,9 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
-GlobalTransition="*uid://cjf12w2hu2y8w"
 GlobalAudio="*uid://exm0bjycd5lk"
 GlobalStateController="*uid://cm4coxcl7utx1"
+GlobalTransition="*uid://cjf12w2hu2y8w"
 
 [display]
 

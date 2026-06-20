@@ -1,5 +1,7 @@
-res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader
-res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_x.gdshader
-res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_y.gdshader
-res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/pendentes.gdshader
-res://JumpOfThePigeon/objetos/mapa/tilemaps/background.gdshader
+res://JumpOfThePigeon/scenes/entidades/player/player.tscn
+res://JumpOfThePigeon/scenes/Interface/transitions/GlobalTransition.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/level01/node_2d.tscn
+res://JumpOfThePigeon/assets/transitions/GlobalTransition.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd
+res://JumpOfThePigeon/scenes/Interface/scripts/transições.gd
+res://JumpOfThePigeon/scenes/menus/main/main_menu.gd

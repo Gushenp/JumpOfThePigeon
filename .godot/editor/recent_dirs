@@ -1,20 +1,3 @@
-res://JumpOfThePigeon/objetos/elementos/portal/
-res://JumpOfThePigeon/Worlds/World1/Levels/level2/
-res://JumpOfThePigeon/Worlds/World1/Levels/
-res://JumpOfThePigeon/Elementos Globais/
-res://JumpOfThePigeon/Menu/
-res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/
-res://JumpOfThePigeon/objetos/mapa/sprites/
-res://JumpOfThePigeon/objetos/inimigos/espinhos/
-res://JumpOfThePigeon/Worlds/
-res://JumpOfThePigeon/objetos/mapa/tilemaps/
-res://JumpOfThePigeon/Worlds/World1/
-res://JumpOfThePigeon/Worlds/World1/Levels/level1/
-res://JumpOfThePigeon/objetos/camera/main/
-res://JumpOfThePigeon/objetos/player/script/
-res://JumpOfThePigeon/objetos/elementos/scripts/
-res://JumpOfThePigeon/objetos/Interface/scripts/
-res://JumpOfThePigeon/objetos/mapa/scripts/
-res://JumpOfThePigeon/objetos/camera/camera_move/
+res://JumpOfThePigeon/assets/transitions/
+res://JumpOfThePigeon/scenes/worlds/world01/level01/
 res://
-res://JumpOfThePigeon/objetos/Interface/

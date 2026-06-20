@@ -1,0 +1,21 @@
+[gd_scene format=4 uid="uid://br3fj6ppodhgj"]
+
+[ext_resource type="Script" uid="uid://b8eltipi1h7gv" path="res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd" id="1_jdn3w"]
+[ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/scenes/worlds/world01/mapa/tilemaps/norma_tilemap.tscn" id="1_tef0i"]
+[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/scenes/entidades/player/player.tscn" id="2_xvahj"]
+
+[node name="level01" type="Node2D" unique_id=1712012538]
+script = ExtResource("1_jdn3w")
+
+[node name="normal_tilemap" parent="." unique_id=373199258 instance=ExtResource("1_tef0i")]
+
+[node name="solo" parent="normal_tilemap" index="0" unique_id=697564108]
+tile_map_data = PackedByteArray("AAACAAsAAQABAAIAAAADAAsAAQABAAIAAAAEAAsAAQABAAIAAAAFAAsAAQABAAIAAAAGAAsAAQABAAIAAAAHAAsAAQABAAIAAAAIAAsAAQABAAIAAAAJAAsAAQABAAIAAAAKAAsAAQABAAIAAAALAAsAAQABAAIAAAAMAAsAAQABAAIAAAANAAsAAQABAAAAAAANAAwAAQABAAMAAAANAA0AAQABAAMAAAAMAAwAAQACAAIAAAALAAwAAQACAAIAAAAKAAwAAQACAAIAAAAJAAwAAQACAAIAAAAIAAwAAQACAAIAAAAHAAwAAQACAAIAAAAHAA0AAQACAAIAAAAGAA0AAQACAAIAAAAFAA0AAQACAAIAAAAEAA0AAQACAAIAAAADAA0AAQACAAIAAAACAA0AAQACAAIAAAACAAwAAQACAAIAAAABAAwAAQACAAIAAAADAAwAAQACAAIAAAAEAAwAAQACAAIAAAAFAAwAAQACAAIAAAAGAAwAAQACAAIAAAALAA0AAQACAAIAAAAMAA0AAQACAAIAAAAKAA0AAQACAAIAAAAJAA0AAQACAAIAAAAIAA0AAQACAAIAAAABAA0AAQACAAIAAAAAAA0AAQACAAIAAAAAAAwAAQACAAIAAAABAAsAAQABAAIAAAAAAAsAAQABAAIAAAA=")
+
+[node name="gramineas_x" parent="normal_tilemap" index="1" unique_id=1557022864]
+tile_map_data = PackedByteArray("AAAKAAoAAAAIAAAAAAA=")
+
+[node name="player" parent="." unique_id=1303017769 instance=ExtResource("2_xvahj")]
+position = Vector2(36, 327)
+
+[editable path="normal_tilemap"]
