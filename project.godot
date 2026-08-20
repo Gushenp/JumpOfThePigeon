@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jump Of The Pigeon"
-run/main_scene="uid://bxp0i42rotfuo"
+run/main_scene="uid://br3fj6ppodhgj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
@@ -24,7 +24,6 @@ GlobalTransition="*uid://cjf12w2hu2y8w"
 
 window/size/viewport_width=768
 window/size/viewport_height=448
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 

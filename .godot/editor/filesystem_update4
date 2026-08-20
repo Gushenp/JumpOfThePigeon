@@ -1,7 +1,4 @@
-res://JumpOfThePigeon/scenes/entidades/player/player.tscn
-res://JumpOfThePigeon/scenes/Interface/transitions/GlobalTransition.tscn
 res://JumpOfThePigeon/scenes/worlds/world01/level01/node_2d.tscn
-res://JumpOfThePigeon/assets/transitions/GlobalTransition.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd
-res://JumpOfThePigeon/scenes/Interface/scripts/transições.gd
-res://JumpOfThePigeon/scenes/menus/main/main_menu.gd
+res://JumpOfThePigeon/scenes/worlds/world01/mapa/tilemaps/norma_tilemap.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/mapa/background/background.tscn
+res://JumpOfThePigeon/scenes/entidades/player/player.tscn

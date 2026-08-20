@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://caa0frqcnerfx" path="res://JumpOfThePigeon/scenes/worlds/world01/mapa/background/sprites/pixil-layer-2.png" id="3_o5nil"]
 [ext_resource type="Texture2D" uid="uid://bynoplku1jci2" path="res://JumpOfThePigeon/scenes/worlds/world01/mapa/background/sprites/pixil-layer-3.png" id="4_u5vla"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o5nil"]
 shader = ExtResource("1_8uebf")
 shader_parameter/intensidade = 0.4
@@ -24,6 +23,7 @@ shader = ExtResource("1_8uebf")
 shader_parameter/intensidade = 0.5
 
 [node name="Node2D" type="ParallaxBackground" unique_id=564769574]
+layer = 0
 
 [node name="Parallax2D" type="ParallaxLayer" parent="." unique_id=1170736544]
 motion_mirroring = Vector2(768, 0)
