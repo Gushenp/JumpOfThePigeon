@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bhw7wt5yupkkd"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_11qv4"]
+b = Vector2(0, 125)
+
+[node name="Zona01" type="Area2D" unique_id=17869938]
+scale = Vector2(2, 2)
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354497138]
+shape = SubResource("SegmentShape2D_11qv4")
+debug_color = Color(0, 0.6460519, 0.25331947, 0.41960785)

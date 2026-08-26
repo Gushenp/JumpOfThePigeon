@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/aterrisar_ambiente.mp3" id="13_eayco"]
 [ext_resource type="AudioStream" uid="uid://cy2wf07oqycv4" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/walking.mp3" id="14_sxe8r"]
 [ext_resource type="AudioStream" uid="uid://gsg2gep36dwc" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/geriart-snoring-8486.mp3" id="23_dpvqy"]
+[ext_resource type="PackedScene" uid="uid://ux5kparwwtrx" path="res://JumpOfThePigeon/scenes/camera/camera.tscn" id="24_l6r85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwwo0"]
 size = Vector2(11, 27.5)
@@ -133,6 +134,11 @@ size = Vector2(20, 21)
 collision_layer = 133
 collision_mask = 133
 script = ExtResource("12_fpr4d")
+SPEED = null
+JUMP_VELOCITY_PRIMARY = null
+JUMP_VELOCITY_SECONDARY = null
+posicao_inicial = null
+pulos_restantes = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=456560402]
 light_mask = 4
@@ -184,5 +190,7 @@ debug_color = Color(0.9882353, 0, 0.29803923, 0.1882353)
 position = Vector2(-3, 4)
 shape = SubResource("RectangleShape2D_y2aud")
 debug_color = Color(0.8745098, 0, 0.3019608, 0.18039216)
+
+[node name="camera" parent="." unique_id=2022583788 instance=ExtResource("24_l6r85")]
 
 [connection signal="body_exited" from="eliminacao" to="eliminacao" method="_on_body_exited"]

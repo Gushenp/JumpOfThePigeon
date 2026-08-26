@@ -1,4 +1,5 @@
+res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd
 res://JumpOfThePigeon/scenes/worlds/world01/level01/node_2d.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/mapa/tilemaps/norma_tilemap.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/mapa/background/background.tscn
 res://JumpOfThePigeon/scenes/entidades/player/player.tscn
+res://JumpOfThePigeon/assets/GlobalCameraConfig.gd
+res://JumpOfThePigeon/scenes/entidades/player/script/player.gd

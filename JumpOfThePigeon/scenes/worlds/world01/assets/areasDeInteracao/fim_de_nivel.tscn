@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvxtfu6jdxi3s"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kwcur"]
+b = Vector2(0, 105)
+
+[node name="FimDeNivel" type="Area2D" unique_id=1950247729]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=430040975]
+shape = SubResource("SegmentShape2D_kwcur")

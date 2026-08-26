@@ -12,7 +12,7 @@ extends CharacterBody2D
 @onready var flying_sound = $Audio/Flying
 
 #variáveis de controle
-@export var SPEED = 120
+@export var SPEED = 120.0
 @export var JUMP_VELOCITY_PRIMARY = -300
 @export var JUMP_VELOCITY_SECONDARY = -300
 @export var posicao_inicial : Vector2
