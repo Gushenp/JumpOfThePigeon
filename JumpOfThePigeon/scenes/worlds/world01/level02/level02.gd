@@ -7,7 +7,6 @@ func _ready() -> void:
 	pass 
 	
 func start_game():
-	await get_tree().create_timer(2.0).timeout
 	GlobalTransition.animation_fade_in()
 	pass
 

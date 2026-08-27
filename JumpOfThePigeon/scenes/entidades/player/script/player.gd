@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var aterrisar_ambiente = $Audio/AterrisarAmbiente
 @onready var walking_sound = $Audio/Walking
 @onready var flying_sound = $Audio/Flying
+@onready var camera = $camera
 
 #variáveis de controle
 @export var SPEED = 120.0
@@ -24,6 +25,7 @@ var is_control_active = true
 #var condiction_control = true
 # ====== Processos iniciais ========
 func _ready() -> void:
+	$"../AreasDeInteração/Eliminacao".eliminar_player.connect(_eliminar_player)
 	posicao_inicial = player.global_position
 
 # ===== Processo de Quadros ======
@@ -108,6 +110,22 @@ func _animacao_player():
 				animacaoPlayerFrame.flip_h = 0
 			elif  Input.is_action_pressed("left"):
 				animacaoPlayerFrame.flip_h = 1
+				
+# Tremer camera
+func tremer_camera():
+	var offset_original = camera.offset
+	
+	camera.offset = offset_original + Vector2(0.2, 0.2)
+	await get_tree().create_timer(0.04).timeout
+	
+	camera.offset = offset_original + Vector2(-0.2, -0.2)
+	await get_tree().create_timer(0.04).timeout
+	
+	camera.offset = offset_original + Vector2(0.1, 0.1)
+	await get_tree().create_timer(0.04).timeout
+	
+	camera.offset = offset_original
+
 # ====== audios player ============
 var estava_no_chao = false
 func _audio_player():
@@ -136,8 +154,8 @@ func _apply_death():
 	var direction = Input.get_axis("left", "right")
 	
 	isDeath = true
-	_desativar_colisoes()
-	GlobalTransition.animation_fade_out(flying_sound, 0, 2.0)
+	desativar_colisoes()
+	GlobalTransition.animation_fade_out()
 	
 	velocity.y = -400
 	if direction == 1.0:
@@ -151,15 +169,18 @@ func _apply_death():
 #==================================
 # ==== Desativar e ativar funcionalidades player ====
 #==================================
-func _desativar_player():
+func desativar_player():
 	player.get_node("AnimatedSprite2D").hide()
 	player.get_node("CollisionShape2D").disabled = true
 	player._desativar_sons()
 
-func _reativar_realidade():
+func reativar_realidade():
 	player.get_node("AnimatedSprite2D").hide()
 	player.get_node("CollisionShape2D").disabled = false
 	player._reativar_sons()
 	
-func _desativar_colisoes():
+func desativar_colisoes():
 	$CollisionShape2D.queue_free()
+	
+func desatvar_controles():
+	is_control_active = false

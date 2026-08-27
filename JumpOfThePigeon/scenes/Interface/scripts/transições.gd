@@ -5,3 +5,6 @@ extends Node2D
 
 func animation_fade_in() -> void:
 	transition.play("fade_in")
+
+func animation_fade_out() -> void:
+	transition.play("fade_out")

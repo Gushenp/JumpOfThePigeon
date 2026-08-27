@@ -1,12 +1,12 @@
 CollisionShape2D
 Area2D
 Node2D
+Timer
 PointLight2D
 TileMapLayer
 AnimationPlayer
 Sprite2D
 AnimatedSprite2D
-Timer
 Button
 AudioStreamPlayer
 Label
