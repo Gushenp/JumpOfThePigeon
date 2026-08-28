@@ -18,6 +18,8 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY_SECONDARY = -300
 @export var posicao_inicial : Vector2
 var isDeath = false
+var isControlsActive = true
+var isGravityActive = true
 var gravidade = 986.0
 var gravidade_planando = 200.0
 var is_control_active = true
@@ -47,11 +49,13 @@ func _player_controls():
 
 # ===== Adicionar Gravidade =====
 func _gravity(delta):
-	if not is_on_floor():
+	if not is_on_floor() and isGravityActive:
 		if Input.is_action_pressed("jump") and velocity.y > 0 and pulos_restantes == 0:
 			velocity.y += gravidade_planando * delta
 		else: 
 			velocity.y += gravidade * delta
+	else:
+		velocity.y += 0
 
 # ===== Funções de Pulo ======
 @export var pulos_restantes = 0
@@ -74,8 +78,9 @@ func _player_direction():
 	if isDeath:
 		return
 		
-	var direction := Input.get_axis("left", "right")
-	velocity.x = direction * SPEED if direction != 0 else move_toward(velocity.x, 0, SPEED)
+	if isControlsActive:
+		var direction := Input.get_axis("left", "right")
+		velocity.x = direction * SPEED if direction != 0 else move_toward(velocity.x, 0, SPEED)
 
 # ======= Mudar de Realidade =======
 signal change_reality
@@ -85,14 +90,16 @@ func _player_change_reality():
 
 # ======= animações ==========
 func _animacao_player():
-	if isDeath == false:
+	if isDeath == false and isGravityActive:
 		if not player.is_on_floor():
 			if Input.is_action_just_pressed("jump"):
 				animacaoPlayerFrame.play("pular")
 		
+		#Animação de pulo
 		if not player.is_on_floor() and Input.is_action_pressed("jump") and pulos_restantes == 0:
 			animacaoPlayerFrame.play("fly")
 				
+		#Animação de controles
 		if player.is_on_floor():
 			if Input.is_action_just_pressed("jump"):
 				animacaoPlayerFrame.play("pular")
@@ -115,14 +122,14 @@ func _animacao_player():
 func tremer_camera():
 	var offset_original = camera.offset
 	
-	camera.offset = offset_original + Vector2(0.2, 0.2)
+	camera.offset = offset_original + Vector2(3.0, 3.0)
 	await get_tree().create_timer(0.04).timeout
 	
-	camera.offset = offset_original + Vector2(-0.2, -0.2)
+	camera.offset = offset_original + Vector2(-3.0, -3.0)
 	await get_tree().create_timer(0.04).timeout
 	
-	camera.offset = offset_original + Vector2(0.1, 0.1)
-	await get_tree().create_timer(0.04).timeout
+	camera.offset = offset_original + Vector2(2.0, 2.0)
+	await get_tree().create_timer(0.7).timeout
 	
 	camera.offset = offset_original
 
@@ -145,10 +152,11 @@ func _random_pitch_audio():
 # ======= eliminar player =======
 func _eliminar_player():
 	_apply_death()
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
 	
 func _apply_death():
+	tremer_camera()
 	player.rotation_degrees = 180
 	var direction_player = (global_position).normalized()
 	var direction = Input.get_axis("left", "right")
@@ -172,12 +180,14 @@ func _apply_death():
 func desativar_player():
 	player.get_node("AnimatedSprite2D").hide()
 	player.get_node("CollisionShape2D").disabled = true
-	player._desativar_sons()
+	isControlsActive = false
+	isGravityActive = false
 
-func reativar_realidade():
-	player.get_node("AnimatedSprite2D").hide()
+func reativar_player():
+	player.get_node("AnimatedSprite2D").show()
 	player.get_node("CollisionShape2D").disabled = false
-	player._reativar_sons()
+	isControlsActive = true
+	isGravityActive = true
 	
 func desativar_colisoes():
 	$CollisionShape2D.queue_free()

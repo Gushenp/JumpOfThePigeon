@@ -7,7 +7,9 @@ func _ready() -> void:
 	pass 
 	
 func start_game():
-	await get_tree().create_timer(2.0).timeout
+	$player.desativar_player()
+	await get_tree().create_timer(1.0).timeout
+	$player.reativar_player()
 	GlobalTransition.animation_fade_in()
 	pass
 

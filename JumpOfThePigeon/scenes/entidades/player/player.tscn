@@ -134,11 +134,6 @@ size = Vector2(20, 21)
 collision_layer = 32897
 collision_mask = 32897
 script = ExtResource("12_fpr4d")
-SPEED = null
-JUMP_VELOCITY_PRIMARY = null
-JUMP_VELOCITY_SECONDARY = null
-posicao_inicial = null
-pulos_restantes = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=456560402]
 light_mask = 4

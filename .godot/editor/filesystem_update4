@@ -1,11 +1,4 @@
-res://JumpOfThePigeon/scenes/worlds/world01/level01/node_2d.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd
-res://JumpOfThePigeon/scenes/areasDeInteracao/Script/eliminacao.gd
-res://JumpOfThePigeon/scenes/entidades/player/script/player.gd
-res://JumpOfThePigeon/scenes/areasDeInteracao/eliminacao.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/level02/level01.gd
-res://JumpOfThePigeon/scenes/worlds/world01/level02/node_2d.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/level02/level02.tscn
 res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/assets/iluminação/luz_global.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/assets/iluminação/ponto_de_reflexo.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd
+res://JumpOfThePigeon/scenes/entidades/player/script/player.gd
+res://JumpOfThePigeon/scenes/entidades/player/player.tscn
