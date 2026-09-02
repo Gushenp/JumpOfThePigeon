@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://c748umc4n5rds"]
+
+[ext_resource type="Script" uid="uid://cujuhsnojcr52" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/script/espreitador.gd" id="1_kfdba"]
+[ext_resource type="Texture2D" uid="uid://dx5x41yu6nuq7" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/walk/pixil-frame-0.png" id="1_oaeq6"]
+[ext_resource type="Texture2D" uid="uid://dnk5h8pmroucs" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/walk/pixil-frame-1.png" id="2_kfdba"]
+[ext_resource type="Texture2D" uid="uid://bkn7fm6am40gi" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/walk/pixil-frame-2.png" id="3_gjht1"]
+[ext_resource type="Texture2D" uid="uid://doqy7dd13ejjs" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/walk/pixil-frame-3.png" id="4_kcgwb"]
+[ext_resource type="Texture2D" uid="uid://b6k58l7k81pcg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/walk/pixil-frame-4.png" id="5_heo8t"]
+[ext_resource type="Texture2D" uid="uid://f45ujnse3j3p" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/walk/pixil-frame-5.png" id="6_pxrh6"]
+[ext_resource type="Texture2D" uid="uid://cei12e02vdpvl" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/stay/pixil-frame-0.png" id="7_xt6vk"]
+[ext_resource type="Texture2D" uid="uid://caicyuwuke473" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/sprites/stay/pixil-frame-1.png" id="8_xo2fe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy22a"]
+size = Vector2(19, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21qkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oaeq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kfdba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gjht1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kcgwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_heo8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pxrh6")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xt6vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xo2fe")
+}],
+"loop": true,
+"name": &"ficar",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ve7u"]
+size = Vector2(27, 14)
+
+[sub_resource type="Gradient" id="Gradient_3iyrq"]
+offsets = PackedFloat32Array(0, 0.6530612, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5578231, 0.5578231, 0.5578231, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_esrie"]
+gradient = SubResource("Gradient_3iyrq")
+fill = 1
+fill_from = Vector2(0.491453, 0.508547)
+fill_to = Vector2(0.18803419, 0.8803419)
+
+[node name="espreitador" type="CharacterBody2D" unique_id=357617616]
+light_mask = 0
+script = ExtResource("1_kfdba")
+GRAVITY = null
+distancia_max_direita = null
+distancia_max_esquerda = 100.0
+SPEED = 30.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1555506183]
+wait_time = 1.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073317387]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_sy22a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1999190638]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_21qkx")
+animation = &"andar"
+frame_progress = 0.6476807
+
+[node name="kill" type="Area2D" parent="." unique_id=485133533]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill" unique_id=1444263891]
+light_mask = 0
+visibility_layer = 5
+z_index = 2
+position = Vector2(0.5, 9)
+shape = SubResource("RectangleShape2D_7ve7u")
+debug_color = Color(0.7633219, 0.2347421, 0.19946441, 0.41960785)
+
+[node name="RayCastEsquerda" type="RayCast2D" parent="." unique_id=996715936]
+target_position = Vector2(-37, 0)
+collision_mask = 256
+
+[node name="RayCastDireita" type="RayCast2D" parent="." unique_id=1274551231]
+target_position = Vector2(37, 0)
+collision_mask = 256
+
+[node name="RayCastbordaEsquerda" type="RayCast2D" parent="." unique_id=219579342]
+position = Vector2(-10, 5)
+target_position = Vector2(0, 18)
+collision_mask = 256
+
+[node name="RayCastbordaDireita" type="RayCast2D" parent="." unique_id=1457101501]
+position = Vector2(10, 5)
+target_position = Vector2(0, 18)
+collision_mask = 256
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=861100022]
+position = Vector2(0, 4)
+scale = Vector2(2, 2)
+color = Color(0.13885854, 0.13885854, 0.13885854, 1)
+energy = 7.37
+texture = SubResource("GradientTexture2D_esrie")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="kill" to="." method="_on_kill_body_entered"]

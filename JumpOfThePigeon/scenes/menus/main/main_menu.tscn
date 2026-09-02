@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://byqlmbwidf7f8"]
 
 [ext_resource type="Script" uid="uid://cmh3k1y25l3y5" path="res://JumpOfThePigeon/scenes/menus/main/main_menu.gd" id="1_rtwfa"]
-[ext_resource type="Texture2D" uid="uid://dp7fom15ouiwv" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/background/sprites/pixil-layer-0.png" id="1_rufca"]
-[ext_resource type="Texture2D" uid="uid://bis67s2urnulc" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/background/sprites/pixil-layer-1.png" id="2_elpp3"]
-[ext_resource type="Texture2D" uid="uid://caa0frqcnerfx" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/background/sprites/pixil-layer-2.png" id="3_05smn"]
-[ext_resource type="Texture2D" uid="uid://bynoplku1jci2" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/background/sprites/pixil-layer-3.png" id="4_rtwfa"]
-[ext_resource type="Texture2D" uid="uid://lu7qwa3bakd3" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/tilemaps/sprites/mapa_tilemap.png" id="6_ewf5x"]
-[ext_resource type="Shader" uid="uid://1xkvt0g2l0lg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/tilemaps/shaders/gramineas_x.gdshader" id="7_r2wa3"]
-[ext_resource type="Shader" uid="uid://bo2vhx3h2hjrk" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/tilemaps/shaders/gramineas_y.gdshader" id="8_lujc3"]
-[ext_resource type="Shader" uid="uid://b3o5ffab34f5c" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/tilemaps/shaders/pendentes.gdshader" id="9_glbky"]
+[ext_resource type="Texture2D" uid="uid://dp7fom15ouiwv" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-0.png" id="1_rufca"]
+[ext_resource type="Texture2D" uid="uid://bis67s2urnulc" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-1.png" id="2_elpp3"]
+[ext_resource type="Texture2D" uid="uid://caa0frqcnerfx" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-2.png" id="3_05smn"]
+[ext_resource type="Texture2D" uid="uid://bynoplku1jci2" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-3.png" id="4_rtwfa"]
+[ext_resource type="Texture2D" uid="uid://ch5jcwio7tuij" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/sprites/mapa_tilemap.png" id="6_ewf5x"]
+[ext_resource type="Shader" uid="uid://1xkvt0g2l0lg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/shaders/gramineas_x.gdshader" id="7_r2wa3"]
+[ext_resource type="Shader" uid="uid://bo2vhx3h2hjrk" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/shaders/gramineas_y.gdshader" id="8_lujc3"]
+[ext_resource type="Shader" uid="uid://b3o5ffab34f5c" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/shaders/pendentes.gdshader" id="9_glbky"]
 [ext_resource type="Texture2D" uid="uid://b8vquh0q425ww" path="res://JumpOfThePigeon/scenes/entidades/player/sprites/sleep/pixil-frame-0.png" id="15_mdv02"]
 [ext_resource type="Texture2D" uid="uid://do6ppcj08h7n" path="res://JumpOfThePigeon/scenes/entidades/player/sprites/sleep/pixil-frame-1.png" id="16_4v6fk"]
 [ext_resource type="Texture2D" uid="uid://cpdofjw8ktujh" path="res://JumpOfThePigeon/scenes/entidades/player/sprites/sleep/pixil-frame-2.png" id="17_lhatv"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://oul13mhk0scg" path="res://JumpOfThePigeon/scenes/entidades/player/sprites/walk/pixil-frame-2.png" id="24_g2i5b"]
 [ext_resource type="Texture2D" uid="uid://cf8eh4lffv0hb" path="res://JumpOfThePigeon/scenes/entidades/player/sprites/walk/pixil-frame-3.png" id="25_u8cwy"]
 [ext_resource type="Texture2D" uid="uid://cqkusqlhayga3" path="res://JumpOfThePigeon/scenes/entidades/player/sprites/walk/pixil-frame-4.png" id="26_e7vjb"]
+
 
 
 

@@ -8,9 +8,9 @@ func _ready() -> void:
 	
 func start_game():
 	$player.desativar_player()
-	await get_tree().create_timer(1.0).timeout
-	$player.reativar_player()
 	GlobalTransition.animation_fade_in()
+	await get_tree().create_timer(1.5).timeout
+	$player.reativar_player()
 	pass
 
 # Funções de Câmera

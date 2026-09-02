@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ctasc68radswo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t46d4"]
+radius = 41.109608
+
+[node name="espinho00" type="Area2D" unique_id=1450222009]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738663662]
+shape = SubResource("CircleShape2D_t46d4")
+debug_color = Color(1, 0.07016479, 0, 0.109000005)

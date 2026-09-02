@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cu603e6oocvlg"]
+
+[ext_resource type="Shader" uid="uid://dnhbtovrfyhhh" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/ambience_shaders.gdshader" id="1_751ij"]
+[ext_resource type="Texture2D" uid="uid://dp7fom15ouiwv" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-0.png" id="2_7ih0t"]
+[ext_resource type="Texture2D" uid="uid://bis67s2urnulc" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-1.png" id="3_1vkwn"]
+[ext_resource type="Texture2D" uid="uid://caa0frqcnerfx" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-2.png" id="4_34gvs"]
+[ext_resource type="Texture2D" uid="uid://bynoplku1jci2" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/sprites/pixil-layer-3.png" id="5_vmlo5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_751ij"]
+shader = ExtResource("1_751ij")
+shader_parameter/cor_noite = Color(0.01, 0.03, 0.35, 1)
+shader_parameter/intensidade = 0.9
+shader_parameter/brilho = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hhuh"]
+shader = ExtResource("1_751ij")
+shader_parameter/cor_noite = Color(0.01, 0.03, 0.35, 1)
+shader_parameter/intensidade = 0.9
+shader_parameter/brilho = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2h0k"]
+shader = ExtResource("1_751ij")
+shader_parameter/cor_noite = Color(0.01, 0.03, 0.35, 1)
+shader_parameter/intensidade = 0.9
+shader_parameter/brilho = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2lwaq"]
+shader = ExtResource("1_751ij")
+shader_parameter/cor_noite = Color(0.01, 0.03, 0.35, 1)
+shader_parameter/intensidade = 0.9
+shader_parameter/brilho = 0.8
+
+[node name="Node2D" type="ParallaxBackground" unique_id=564769574]
+layer = -1
+
+[node name="Parallax2D" type="ParallaxLayer" parent="." unique_id=1170736544]
+motion_mirroring = Vector2(768, 448)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=365531568]
+material = SubResource("ShaderMaterial_751ij")
+texture = ExtResource("2_7ih0t")
+offset = Vector2(384, 224)
+flip_v = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=628135918]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(768, 448)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2" unique_id=751970500]
+material = SubResource("ShaderMaterial_4hhuh")
+texture = ExtResource("3_1vkwn")
+offset = Vector2(384, 224)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." unique_id=1094442069]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(768, 448)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3" unique_id=505104022]
+material = SubResource("ShaderMaterial_j2h0k")
+texture = ExtResource("4_34gvs")
+offset = Vector2(384, 224)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="." unique_id=1725812136]
+light_mask = 7
+visibility_layer = 7
+motion_mirroring = Vector2(768, 448)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4" unique_id=1764052030]
+material = SubResource("ShaderMaterial_2lwaq")
+texture = ExtResource("5_vmlo5")
+offset = Vector2(384, 224)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bsywjrqwy2vwx"]
+
+[node name="folhas_other_rec" type="CPUParticles2D" unique_id=692863183]
+amount = 20
+lifetime = 7.0
+emission_shape = 1
+emission_sphere_radius = 21.17
+gravity = Vector2(0, 0)
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+radial_accel_min = 10.0
+radial_accel_max = 20.0
+scale_amount_max = 2.0
+color = Color(0.27395758, 0.64995646, 1, 1)

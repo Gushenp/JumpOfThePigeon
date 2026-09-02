@@ -1,0 +1,86 @@
+[gd_scene format=4 uid="uid://c7gbg0hd40r4j"]
+
+[ext_resource type="Script" uid="uid://d262ee4fdbjy" path="res://teste.gd" id="1_s2wow"]
+[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/scenes/entidades/player/player.tscn" id="2_s2wow"]
+[ext_resource type="PackedScene" uid="uid://cu603e6oocvlg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/backGround/background_other.tscn" id="3_3iyrq"]
+[ext_resource type="PackedScene" uid="uid://dq4s6uc1tpqf2" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/other_tilemap.tscn" id="4_3iyrq"]
+[ext_resource type="PackedScene" uid="uid://bsywjrqwy2vwx" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/particulas_other/folhas_other.tscn" id="5_4iivt"]
+[ext_resource type="PackedScene" uid="uid://c748umc4n5rds" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/espreitador.tscn" id="6_cgmdw"]
+
+[sub_resource type="Gradient" id="Gradient_3iyrq"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4iivt"]
+gradient = SubResource("Gradient_3iyrq")
+fill = 1
+fill_from = Vector2(0.48290598, 0.491453)
+fill_to = Vector2(0.18803419, 0.8803419)
+
+[node name="Node2D" type="Node2D" unique_id=877236716]
+script = ExtResource("1_s2wow")
+
+[node name="player" parent="." unique_id=1303017769 instance=ExtResource("2_s2wow")]
+position = Vector2(206, 235)
+
+[node name="Node2D" parent="." unique_id=564769574 instance=ExtResource("3_3iyrq")]
+
+[node name="normal_tilemap" parent="." unique_id=373199258 instance=ExtResource("4_3iyrq")]
+
+[node name="solo" parent="normal_tilemap" index="0" unique_id=697564108]
+modulate = Color(0.13237096, 0.22540934, 0.8183277, 1)
+tile_map_data = PackedByteArray("AAAHAAkAAQABAAAAAAAIAAoAAQABAAIAAAAJAAoAAQABAAIAAAAHAAoAAQADAAAAAAAKAAoAAQABAAIAAAALAAoAAQABAAIAAAAGAAoAAQACAAIAAAAGAAsAAQAAAAMAAAAHAAsAAQAAAAMAAAAIAAsAAQAAAAMAAAAJAAsAAQAAAAMAAAAKAAsAAQAAAAMAAAALAAsAAQAAAAMAAAAMAAoAAQABAAIAAAAMAAsAAQAAAAMAAAANAAoAAQABAAIAAAANAAsAAQAAAAMAAAAGAAkAAQADAAAAAAAGAAgAAQABAAAAAAAOAAoAAQABAAIAAAAOAAsAAQAAAAMAAAAPAAsAAQAAAAMAAAAPAAoAAQABAAIAAAAQAAoAAQACAAAAAAARAAoAAQACAAIAAAAQAAsAAQAAAAMAAAARAAsAAQAAAAMAAAARAAkAAQACAAAAAAAQAAkAAQAAAAAAAAARAAgAAQAAAAAAAAASAAkAAQABAAMAAAASAAoAAQABAAMAAAASAAgAAQABAAAAAAASAAsAAQABAAEAAAAFAAkAAQAAAAIAAAAFAAgAAQAAAAAAAAAFAAoAAQAAAAIAAAAFAAsAAQAAAAEAAAAFAAIAAQAAAAIAAAAFAAEAAQAAAAIAAAAFAAAAAQAAAAAAAAAGAAAAAQABAAIAAAAGAAEAAQACAAIAAAAHAAEAAQACAAIAAAAGAAIAAQADAAEAAAAHAAAAAQABAAIAAAAIAAAAAQABAAIAAAAJAAEAAQACAAIAAAAIAAEAAQACAAIAAAAJAAAAAQABAAIAAAAKAAAAAQABAAIAAAALAAAAAQABAAIAAAAMAAAAAQABAAIAAAANAAAAAQABAAIAAAAOAAAAAQABAAIAAAALAAEAAQACAAIAAAAMAAEAAQACAAIAAAANAAEAAQACAAIAAAAOAAEAAQACAAIAAAAPAAEAAQACAAIAAAAQAAEAAQACAAIAAAARAAEAAQACAAIAAAARAAIAAQACAAEAAAASAAIAAQABAAMAAAASAAEAAQABAAMAAAASAAAAAQABAAAAAAARAAAAAQABAAIAAAAQAAAAAQABAAIAAAAPAAAAAQABAAIAAAAKAAEAAQACAAIAAAAQAAIAAQAAAAMAAAAFAAMAAQAAAAIAAAAFAAQAAQAAAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAMAAAAHAAIAAQAAAAMAAAAIAAIAAQAAAAMAAAAJAAIAAQAAAAMAAAAKAAIAAQAAAAMAAAALAAIAAQAAAAMAAAAMAAIAAQAAAAMAAAANAAIAAQAAAAMAAAAOAAIAAQAAAAMAAAAPAAIAAQAAAAMAAAARAAQAAQAAAAEAAAASAAQAAQABAAEAAAASAAMAAQABAAMAAAARAAMAAQAAAAIAAAA=")
+
+[node name="gramineas_x" parent="normal_tilemap" index="1" unique_id=1557022864]
+modulate = Color(0.0006249297, 0.3133793, 0.9855457, 1)
+self_modulate = Color(0.69921994, 0.803539, 1, 1)
+tile_map_data = PackedByteArray("AAAFAAcAAAAJAAAAAAAGAAcAAAAJAAIAAAAHAAgAAAAJAAAAAAAIAAkAAAAJAAIAAAAJAAkAAAAJAAAAAAAKAAkAAAAJAAAAAAALAAkAAAAJAAAAAAAMAAkAAAAJAAIAAAANAAkAAAAJAAAAAAAOAAkAAAAJAAAAAAAPAAkAAAAJAAEAAAAQAAgAAAAJAAAAAAARAAcAAAAJAAIAAAASAAcAAAAJAAAAAAAHAAMAAAAJAAEAADAIAAMAAAAJAAIAADAJAAMAAAAJAAAAADAKAAMAAAAJAAIAADALAAMAAAAJAAAAADAMAAMAAAAJAAEAADANAAMAAAAJAAIAADAOAAMAAAAJAAEAADAPAAMAAAAJAAAAADAQAAMAAAAJAAAAADARAAUAAAAJAAIAADASAAUAAAAJAAEAADAFAAUAAAAJAAAAADAGAAUAAAAJAAAAADA=")
+
+[node name="gramineas_y" parent="normal_tilemap" index="2" unique_id=1613191730]
+modulate = Color(0, 0.3137255, 0.9843137, 1)
+self_modulate = Color(0.69803923, 0.8039216, 1, 1)
+
+[node name="pendentes" parent="normal_tilemap" index="3" unique_id=981553471]
+modulate = Color(0, 0.3137255, 0.9843137, 1)
+self_modulate = Color(0.69803923, 0.8039216, 1, 1)
+tile_map_data = PackedByteArray("AAAHAAMAAAAEAAEAAAAHAAQAAAAEAAIAAAAKAAMAAAAFAAEAAAAKAAQAAAAFAAIAAAAJAAMAAAAFAAIAAAAPAAMAAAAFAAIAAAASAAUAAAAFAAIAAAAQAAMAAAAEAAAAAAA=")
+
+[node name="arbustos" parent="normal_tilemap" index="4" unique_id=1198152538]
+modulate = Color(0.00020388186, 0.18186864, 0.6119469, 1)
+self_modulate = Color(0.69803923, 0.8039216, 1, 1)
+
+[node name="espinhos" parent="normal_tilemap" index="5" unique_id=665947107]
+modulate = Color(7.70092e-07, 0.6804798, 0.9687801, 1)
+self_modulate = Color(0.21514106, 0.49380624, 0.9999954, 1)
+
+[node name="iluminacao" type="Node2D" parent="." unique_id=798134947]
+
+[node name="PointLight2D" type="PointLight2D" parent="iluminacao" unique_id=25373561]
+position = Vector2(405.99994, 141.5625)
+scale = Vector2(9.34375, 2.3574219)
+color = Color(0.4036778, 0.23446338, 0.9217038, 1)
+energy = 3.25
+texture = SubResource("GradientTexture2D_4iivt")
+
+[node name="PointLight2D2" type="PointLight2D" parent="iluminacao" unique_id=275998773]
+position = Vector2(396, 286)
+scale = Vector2(9.34375, 2.3574219)
+color = Color(0.4036778, 0.23446338, 0.9217038, 1)
+energy = 3.25
+texture = SubResource("GradientTexture2D_4iivt")
+
+[node name="particulas" type="Node2D" parent="." unique_id=1193939148]
+
+[node name="folhas_other_rec" parent="." unique_id=692863183 instance=ExtResource("5_4iivt")]
+position = Vector2(383, 326)
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+
+[node name="folhas_other_rec2" parent="." unique_id=610403897 instance=ExtResource("5_4iivt")]
+position = Vector2(381, 88)
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+
+[node name="espreitador" parent="." unique_id=357617616 groups=["inimigos"] instance=ExtResource("6_cgmdw")]
+position = Vector2(368, 297)
+
+[editable path="normal_tilemap"]

@@ -22,8 +22,12 @@
 [ext_resource type="AudioStream" uid="uid://dpxqe3vt1w668" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/flying.mp3" id="13_80vxn"]
 [ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/aterrisar_ambiente.mp3" id="13_eayco"]
 [ext_resource type="AudioStream" uid="uid://cy2wf07oqycv4" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/walking.mp3" id="14_sxe8r"]
+[ext_resource type="AudioStream" uid="uid://da01ql5dvacua" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/freeze.mp3" id="19_viao2"]
 [ext_resource type="AudioStream" uid="uid://gsg2gep36dwc" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/geriart-snoring-8486.mp3" id="23_dpvqy"]
 [ext_resource type="PackedScene" uid="uid://ux5kparwwtrx" path="res://JumpOfThePigeon/scenes/camera/camera.tscn" id="24_l6r85"]
+[ext_resource type="AudioStream" uid="uid://kbylho0s7adu" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/change_reality/piu00.mp3" id="24_wi3p8"]
+[ext_resource type="AudioStream" uid="uid://bop2d44hf7gs5" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/change_reality/piu01.mp3" id="25_viao2"]
+[ext_resource type="AudioStream" uid="uid://l4vmukbs3t5s" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/change_reality/piu02.mp3" id="26_pdbl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwwo0"]
 size = Vector2(11, 27.5)
@@ -150,6 +154,9 @@ frame_progress = 0.44804838
 
 [node name="Audio" type="Node2D" parent="." unique_id=795854979]
 
+[node name="Freeze" type="AudioStreamPlayer" parent="Audio" unique_id=1287893636]
+stream = ExtResource("19_viao2")
+
 [node name="Flying" type="AudioStreamPlayer" parent="Audio" unique_id=1989163358]
 stream = ExtResource("13_80vxn")
 
@@ -172,6 +179,17 @@ volume_db = -22.746
 pitch_scale = 1.7
 parameters/looping = true
 
+[node name="alterarRealidade" type="Node2D" parent="Audio" unique_id=854099438]
+
+[node name="Piu00" type="AudioStreamPlayer" parent="Audio/alterarRealidade" unique_id=1297445964]
+stream = ExtResource("24_wi3p8")
+
+[node name="Piu01" type="AudioStreamPlayer" parent="Audio/alterarRealidade" unique_id=161317348]
+stream = ExtResource("25_viao2")
+
+[node name="Piu02" type="AudioStreamPlayer" parent="Audio/alterarRealidade" unique_id=68547344]
+stream = ExtResource("26_pdbl8")
+
 [node name="eliminacao" type="Area2D" parent="." unique_id=1659849784]
 collision_layer = 128
 collision_mask = 128
@@ -187,5 +205,6 @@ shape = SubResource("RectangleShape2D_y2aud")
 debug_color = Color(0.8745098, 0, 0.3019608, 0.18039216)
 
 [node name="camera" parent="." unique_id=2022583788 instance=ExtResource("24_l6r85")]
+enabled = true
 
 [connection signal="body_exited" from="eliminacao" to="eliminacao" method="_on_body_exited"]

@@ -1,4 +1,3 @@
-res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.tscn
-res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd
-res://JumpOfThePigeon/scenes/entidades/player/script/player.gd
 res://JumpOfThePigeon/scenes/entidades/player/player.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/ambience_shaders.gdshader
+res://teste.gdshader

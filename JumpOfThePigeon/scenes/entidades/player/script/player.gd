@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #Variáveis fundamentais
-@onready var player = $"."
+@onready var player = self
 
 #arquivos externos
 @onready var animacaoPlayerFrame = $AnimatedSprite2D
@@ -13,29 +13,36 @@ extends CharacterBody2D
 @onready var camera = $camera
 
 #variáveis de controle
-@export var SPEED = 120.0
-@export var JUMP_VELOCITY_PRIMARY = -300
-@export var JUMP_VELOCITY_SECONDARY = -300
+@export var SPEED:float = 120.0
+@export var JUMP_VELOCITY_PRIMARY:float = -300
+@export var JUMP_VELOCITY_SECONDARY:float = -300
 @export var posicao_inicial : Vector2
-var isDeath = false
-var isControlsActive = true
-var isGravityActive = true
+
+# Variáveis internas
+var player_ativo = true
+var is_death = false
 var gravidade = 986.0
 var gravidade_planando = 200.0
 var is_control_active = true
-#var condition_gravity = true
-#var condiction_control = true
+
+
 # ====== Processos iniciais ========
 func _ready() -> void:
-	$"../AreasDeInteração/Eliminacao".eliminar_player.connect(_eliminar_player)
 	posicao_inicial = player.global_position
 
 # ===== Processo de Quadros ======
 func _physics_process(delta: float) -> void:
-	_player_controls()
-	_gravity(delta)
-	move_and_slide()
+	_controle_de_atividade(delta)
 
+# ===== Funções de Estados =====
+func _controle_de_atividade(delta):
+	if player_ativo:
+		_player_controls()
+		_gravity(delta)
+		move_and_slide()
+	else:
+		return 
+		
 # ===== Funções Gerais =====
 func _player_controls():
 	if is_control_active:
@@ -49,7 +56,7 @@ func _player_controls():
 
 # ===== Adicionar Gravidade =====
 func _gravity(delta):
-	if not is_on_floor() and isGravityActive:
+	if not is_on_floor():
 		if Input.is_action_pressed("jump") and velocity.y > 0 and pulos_restantes == 0:
 			velocity.y += gravidade_planando * delta
 		else: 
@@ -75,22 +82,26 @@ func _player_jump():
 
 # ====== Movimentação Player =======
 func _player_direction():
-	if isDeath:
+	if is_death:
 		return
 		
-	if isControlsActive:
-		var direction := Input.get_axis("left", "right")
-		velocity.x = direction * SPEED if direction != 0 else move_toward(velocity.x, 0, SPEED)
+	var direction := Input.get_axis("left", "right")
+	velocity.x = direction * SPEED if direction != 0 else move_toward(velocity.x, 0, SPEED)
 
 # ======= Mudar de Realidade =======
 signal change_reality
 func _player_change_reality():
 	if Input.is_action_just_pressed("change"):
 		emit_signal("change_reality")
+		
+		var audios = [$Audio/alterarRealidade/Piu00, $Audio/alterarRealidade/Piu01, $Audio/alterarRealidade/Piu02]
+		var audio_escolhido = audios.pick_random()
+		audio_escolhido.play()
+		$Audio/Freeze.play()
 
 # ======= animações ==========
 func _animacao_player():
-	if isDeath == false and isGravityActive:
+	if is_death == false:
 		if not player.is_on_floor():
 			if Input.is_action_just_pressed("jump"):
 				animacaoPlayerFrame.play("pular")
@@ -122,14 +133,14 @@ func _animacao_player():
 func tremer_camera():
 	var offset_original = camera.offset
 	
-	camera.offset = offset_original + Vector2(3.0, 3.0)
-	await get_tree().create_timer(0.04).timeout
-	
-	camera.offset = offset_original + Vector2(-3.0, -3.0)
-	await get_tree().create_timer(0.04).timeout
-	
 	camera.offset = offset_original + Vector2(2.0, 2.0)
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.04).timeout
+	
+	camera.offset = offset_original + Vector2(-2.0, -2.0)
+	await get_tree().create_timer(0.04).timeout
+	
+	camera.offset = offset_original + Vector2(1.0, 1.0)
+	await get_tree().create_timer(0.5).timeout
 	
 	camera.offset = offset_original
 
@@ -150,18 +161,18 @@ func _random_pitch_audio():
 	aterrisar_ambiente.pitch_scale = randf_range(0.9, 1.1)
 
 # ======= eliminar player =======
-func _eliminar_player():
+func eliminar_player():
 	_apply_death()
 	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
 	
-func _apply_death():
+func _apply_death():	
 	tremer_camera()
 	player.rotation_degrees = 180
 	var direction_player = (global_position).normalized()
 	var direction = Input.get_axis("left", "right")
 	
-	isDeath = true
+	is_death = true
 	desativar_colisoes()
 	GlobalTransition.animation_fade_out()
 	
@@ -178,16 +189,10 @@ func _apply_death():
 # ==== Desativar e ativar funcionalidades player ====
 #==================================
 func desativar_player():
-	player.get_node("AnimatedSprite2D").hide()
-	player.get_node("CollisionShape2D").disabled = true
-	isControlsActive = false
-	isGravityActive = false
+	player_ativo = false
 
 func reativar_player():
-	player.get_node("AnimatedSprite2D").show()
-	player.get_node("CollisionShape2D").disabled = false
-	isControlsActive = true
-	isGravityActive = true
+	player_ativo = true
 	
 func desativar_colisoes():
 	$CollisionShape2D.queue_free()
