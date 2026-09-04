@@ -25,7 +25,6 @@ GlobalCameraConfig="*uid://ct8rjh04jj6eh"
 
 window/size/viewport_width=768
 window/size/viewport_height=448
-window/size/mode=1
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 

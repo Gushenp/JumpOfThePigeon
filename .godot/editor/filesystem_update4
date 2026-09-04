@@ -1,3 +1,6 @@
-res://JumpOfThePigeon/scenes/entidades/player/player.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/level03/level03.tscn
 res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/ambience_shaders.gdshader
-res://teste.gdshader
+res://JumpOfThePigeon/scenes/entidades/player/shaders/trocarRealidade.gdshader
+res://JumpOfThePigeon/scenes/worlds/world01/level03/level03.gd
+res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/espreitador.tscn
+res://JumpOfThePigeon/scenes/camera/Script/areas_de_camera.gd

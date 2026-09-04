@@ -65,9 +65,8 @@ fill_to = Vector2(0.18803419, 0.8803419)
 
 [node name="espreitador" type="CharacterBody2D" unique_id=357617616]
 light_mask = 0
+z_index = 4
 script = ExtResource("1_kfdba")
-GRAVITY = null
-distancia_max_direita = null
 distancia_max_esquerda = 100.0
 SPEED = 30.0
 
@@ -116,6 +115,7 @@ target_position = Vector2(0, 18)
 collision_mask = 256
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=861100022]
+visible = false
 position = Vector2(0, 4)
 scale = Vector2(2, 2)
 color = Color(0.13885854, 0.13885854, 0.13885854, 1)

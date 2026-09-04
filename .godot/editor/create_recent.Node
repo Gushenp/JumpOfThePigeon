@@ -1,4 +1,6 @@
 Node2D
+AnimationPlayer
+Node
 ColorRect
 CanvasLayer
 Control
@@ -10,5 +12,3 @@ CollisionShape2D
 Area2D
 Timer
 TileMapLayer
-AnimationPlayer
-Sprite2D
