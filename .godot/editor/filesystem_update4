@@ -1,3 +1,15 @@
-res://JumpOfThePigeon/scenes/entidades/player/player.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/background.tscn
 res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/ambience_shaders.gdshader
 res://teste.gdshader
+res://JumpOfThePigeon/scenes/worlds/world01/level03/level03.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espinhos/espinho_colisao_00.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espinhos/scripts/espinhos.gd
+res://JumpOfThePigeon/scenes/areasDeInteracao/eliminacao.tscn
+res://JumpOfThePigeon/scenes/camera/Script/areas_de_camera.gd
+res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/espreitador.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/iluminação/ponto_de_reflexo.tscn
+res://JumpOfThePigeon/scenes/areasDeInteracao/area_saida.tscn
+res://JumpOfThePigeon/scenes/entidades/player/player.tscn
+res://JumpOfThePigeon/scenes/worlds/world01/level02/level02.tscn
+res://JumpOfThePigeon/scenes/areasDeInteracao/Script/area_saida.gd
+res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.tscn

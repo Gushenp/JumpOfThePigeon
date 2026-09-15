@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Jump Of The Pigeon"
 run/main_scene="uid://br3fj6ppodhgj"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
 
@@ -25,7 +25,6 @@ GlobalCameraConfig="*uid://ct8rjh04jj6eh"
 
 window/size/viewport_width=768
 window/size/viewport_height=448
-window/size/mode=1
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 

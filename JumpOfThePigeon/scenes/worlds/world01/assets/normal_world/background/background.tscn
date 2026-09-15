@@ -24,6 +24,7 @@ shader_parameter/intensidade = 0.5
 
 [node name="Node2D" type="ParallaxBackground" unique_id=564769574]
 layer = 0
+scroll_ignore_camera_zoom = true
 
 [node name="Parallax2D" type="ParallaxLayer" parent="." unique_id=1170736544]
 motion_mirroring = Vector2(768, 448)

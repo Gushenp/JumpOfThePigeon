@@ -14,6 +14,30 @@
 [ext_resource type="PackedScene" uid="uid://bhssxiemorv1m" path="res://JumpOfThePigeon/scenes/areasDeInteracao/area_saida.tscn" id="9_wlhwy"]
 [ext_resource type="PackedScene" uid="uid://dtsojdupfmjw5" path="res://JumpOfThePigeon/scenes/areasDeInteracao/eliminacao.tscn" id="10_3deld"]
 
+[sub_resource type="Gradient" id="Gradient_d3o83"]
+offsets = PackedFloat32Array(0, 0.51293105, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_04fjm"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_d3o83")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ogly"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_d3o83")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ceoob"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_d3o83")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_31t7y"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_d3o83")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_63e2y"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_d3o83")
+
 [node name="level02" type="Node2D" unique_id=1712012538]
 script = ExtResource("1_7plj8")
 
@@ -95,22 +119,27 @@ range_layer_min = -1
 [node name="reflexo" parent="mapa/iluminacao" unique_id=518103116 instance=ExtResource("6_31i2l")]
 position = Vector2(304, 314.00003)
 scale = Vector2(6.9494753, 16.764124)
+texture = SubResource("GradientTexture2D_04fjm")
 
 [node name="reflexo2" parent="mapa/iluminacao" unique_id=964281875 instance=ExtResource("6_31i2l")]
 position = Vector2(934, 336.99997)
 scale = Vector2(6.9494753, 16.764124)
+texture = SubResource("GradientTexture2D_8ogly")
 
 [node name="reflexo3" parent="mapa/iluminacao" unique_id=409621939 instance=ExtResource("6_31i2l")]
 position = Vector2(1480, 422)
 scale = Vector2(6.9494753, 16.764124)
+texture = SubResource("GradientTexture2D_ceoob")
 
 [node name="reflexo4" parent="mapa/iluminacao" unique_id=1194369399 instance=ExtResource("6_31i2l")]
 position = Vector2(2023.0001, 337.00006)
 scale = Vector2(6.9494753, 16.764124)
+texture = SubResource("GradientTexture2D_31t7y")
 
 [node name="reflexo5" parent="mapa/iluminacao" unique_id=1522915048 instance=ExtResource("6_31i2l")]
 position = Vector2(2728, 383.00006)
 scale = Vector2(6.9494753, 16.764124)
+texture = SubResource("GradientTexture2D_63e2y")
 
 [node name="inimigos" type="Node2D" parent="mapa" unique_id=1455027884]
 
@@ -133,7 +162,8 @@ position = Vector2(2883, -14)
 [node name="AreasDeInteração" type="Node2D" parent="." unique_id=852731467]
 
 [node name="AreaSaida" parent="AreasDeInteração" unique_id=1327584529 instance=ExtResource("9_wlhwy")]
-position = Vector2(3175, 192)
+position = Vector2(3185, 184)
+next_level = "res://JumpOfThePigeon/scenes/worlds/world01/level03/level03.tscn"
 
 [node name="Eliminacao" parent="AreasDeInteração" unique_id=406964138 instance=ExtResource("10_3deld")]
 position = Vector2(-6, 692)

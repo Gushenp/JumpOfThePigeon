@@ -1,0 +1,83 @@
+[gd_scene format=4 uid="uid://b4m0l6yyyg5sw"]
+
+[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/scenes/entidades/player/player.tscn" id="1_tb8ab"]
+[ext_resource type="PackedScene" uid="uid://dbq8bn46up270" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/background.tscn" id="2_smmk8"]
+[ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/norma_tilemap.tscn" id="3_gt63u"]
+[ext_resource type="PackedScene" uid="uid://cnbkajtr1t6hg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/iluminação/luz_global.tscn" id="4_0n6fd"]
+[ext_resource type="PackedScene" uid="uid://c748umc4n5rds" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/espreitador.tscn" id="5_70555"]
+[ext_resource type="Script" uid="uid://rruaf8spgklx" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espinhos/scripts/espinhos.gd" id="6_gwnxu"]
+[ext_resource type="Script" uid="uid://xcqv8uvv4cu5" path="res://JumpOfThePigeon/scenes/camera/Script/areas_de_camera.gd" id="7_stv80"]
+[ext_resource type="PackedScene" uid="uid://bhssxiemorv1m" path="res://JumpOfThePigeon/scenes/areasDeInteracao/area_saida.tscn" id="8_xsdca"]
+[ext_resource type="PackedScene" uid="uid://dtsojdupfmjw5" path="res://JumpOfThePigeon/scenes/areasDeInteracao/eliminacao.tscn" id="9_obbme"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fg58r"]
+resource_local_to_scene = true
+b = Vector2(4857, -134)
+
+[node name="level_4" type="Node2D" unique_id=138904340]
+
+[node name="player" parent="." unique_id=1303017769 instance=ExtResource("1_tb8ab")]
+position = Vector2(148, 714)
+
+[node name="camera" parent="player" index="4" unique_id=2022583788]
+zoom = Vector2(1.8, 1.8)
+limit_right = 4700
+limit_bottom = 10000000
+
+[node name="mapas" type="Node2D" parent="." unique_id=2137591432]
+
+[node name="normal_world" type="Node2D" parent="mapas" unique_id=1086916690]
+
+[node name="background" type="Node2D" parent="mapas/normal_world" unique_id=1320662260]
+
+[node name="Node2D" parent="mapas/normal_world/background" unique_id=564769574 instance=ExtResource("2_smmk8")]
+layer = -1
+
+[node name="normal_tilemap" parent="mapas/normal_world" unique_id=373199258 instance=ExtResource("3_gt63u")]
+
+[node name="solo" parent="mapas/normal_world/normal_tilemap" index="0" unique_id=697564108]
+z_index = 1
+tile_map_data = PackedByteArray("AAANABgAAQABAAEAAAANABcAAQABAAAAAAAMABgAAQAAAAMAAAAMABcAAQABAAIAAAALABgAAQAAAAMAAAALABcAAQABAAIAAAAKABgAAQAAAAMAAAAKABcAAQABAAIAAAAJABgAAQAAAAMAAAAJABcAAQABAAIAAAAIABgAAQAAAAMAAAAIABcAAQABAAIAAAAHABgAAQAAAAMAAAAHABcAAQABAAIAAAAGABgAAQAAAAMAAAAGABcAAQABAAIAAAAFABgAAQAAAAMAAAAFABcAAQABAAIAAAAEABgAAQAAAAMAAAAEABcAAQABAAIAAAADABgAAQAAAAMAAAADABcAAQABAAIAAAACABgAAQAAAAEAAAACABcAAQAAAAAAAAA=")
+
+[node name="elementos" type="Node2D" parent="mapas/normal_world" unique_id=963794804]
+
+[node name="particulas" type="Node2D" parent="mapas/normal_world/elementos" unique_id=1665475263]
+
+[node name="iluminacao" type="Node2D" parent="mapas/normal_world" unique_id=159903404]
+
+[node name="luz_global" parent="mapas/normal_world/iluminacao" unique_id=1020887460 instance=ExtResource("4_0n6fd")]
+range_layer_min = -1
+
+[node name="inimigos" type="Node2D" parent="mapas/normal_world" unique_id=320140526]
+
+[node name="espreitadores" type="Node2D" parent="mapas/normal_world/inimigos" unique_id=2035670126]
+
+[node name="espreitador" parent="mapas/normal_world/inimigos/espreitadores" unique_id=357617616 groups=["espreitadores"] instance=ExtResource("5_70555")]
+position = Vector2(344, 707)
+
+[node name="espinhos" type="Node2D" parent="mapas/normal_world/inimigos" unique_id=1667760508]
+script = ExtResource("6_gwnxu")
+
+[node name="geral" type="Node2D" parent="mapas" unique_id=1804307172]
+
+[node name="other_world" type="Node2D" parent="mapas" unique_id=494775255]
+
+[node name="AreasDeCamera" type="Node2D" parent="." unique_id=359898261]
+script = ExtResource("7_stv80")
+
+[node name="AreasDeInteração" type="Node2D" parent="." unique_id=514596533]
+
+[node name="AreaSaida" parent="AreasDeInteração" unique_id=1327584529 instance=ExtResource("8_xsdca")]
+position = Vector2(4661, 331)
+
+[node name="Eliminacao" parent="AreasDeInteração" unique_id=406964138 instance=ExtResource("9_obbme")]
+position = Vector2(4, 900)
+
+[node name="CollisionShape2D" parent="AreasDeInteração/Eliminacao" index="0" unique_id=793457638]
+shape = SubResource("SegmentShape2D_fg58r")
+
+[connection signal="area_exited" from="AreasDeInteração/AreaSaida" to="AreasDeInteração/AreaSaida" method="_on_area_exited"]
+
+[editable path="player"]
+[editable path="mapas/normal_world/normal_tilemap"]
+[editable path="AreasDeInteração/Eliminacao"]

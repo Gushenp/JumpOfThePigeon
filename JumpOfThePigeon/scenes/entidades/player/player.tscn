@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_rdi2u")
 }],
-"loop": false,
+"loop": 0,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -58,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_q0yu7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fly",
 "speed": 9.0
 }, {
@@ -69,7 +69,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_57twl")
 }],
-"loop": false,
+"loop": 0,
 "name": &"pular",
 "speed": 5.0
 }, {
@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.4,
 "texture": ExtResource("10_doml0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sleep",
 "speed": 4.0
 }, {
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_g7xo6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stay",
 "speed": 6.0
 }, {
@@ -120,7 +120,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_a1wa5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -191,8 +191,8 @@ stream = ExtResource("25_viao2")
 stream = ExtResource("26_pdbl8")
 
 [node name="eliminacao" type="Area2D" parent="." unique_id=1659849784]
-collision_layer = 128
-collision_mask = 128
+collision_layer = 32896
+collision_mask = 32896
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="eliminacao" unique_id=1064817488]
 position = Vector2(0.5, -5)

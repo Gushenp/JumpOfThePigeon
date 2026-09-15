@@ -5,6 +5,7 @@ offsets = PackedFloat32Array(0, 0.51293105, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sk2gc"]
+resource_local_to_scene = true
 gradient = SubResource("Gradient_d3o83")
 
 [node name="reflexo" type="PointLight2D" unique_id=518103116]

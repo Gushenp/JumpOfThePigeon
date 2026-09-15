@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctasc68radswo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t46d4"]
+resource_local_to_scene = true
 radius = 41.109608
 
 [node name="espinho00" type="Area2D" unique_id=1450222009]

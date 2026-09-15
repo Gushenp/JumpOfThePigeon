@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://jfe8t8ns6ptw" path="res://JumpOfThePigeon/scenes/areasDeInteracao/Script/eliminacao.gd" id="1_1lhui"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5li1e"]
+resource_local_to_scene = true
 b = Vector2(3234, -11)
 
 [node name="Eliminacao" type="Area2D" unique_id=406964138]

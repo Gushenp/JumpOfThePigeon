@@ -1,26 +1,16 @@
 extends Node2D
 
+@onready var camera = $"../player/camera"
 
-func _on_zona_01_area_entered(area: Area2D) -> void:
-	GlobalCameraConfig.zoom_camera($"../player/camera", 1.2, 1.2)
-	pass 
-
-
-func _on_zona_02_area_entered(area: Area2D) -> void:
-	GlobalCameraConfig.zoom_camera($"../player/camera", 1.4, 1.4)
-	GlobalCameraConfig.move_camera_x($"../player/camera", 100)
+func _on_zona_01_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		GlobalCameraConfig.zoom_camera(camera, 1.3, 1.3)
+		GlobalCameraConfig.move_camera_y(camera, -30)
 	pass # Replace with function body.
 
 
-func _on_zona_03_area_entered(area: Area2D) -> void:
-	GlobalCameraConfig.zoom_camera($"../player/camera", 1.2, 1.2)
-	GlobalCameraConfig.move_camera_x($"../player/camera", 150)
-	GlobalCameraConfig.move_camera_y($"../player/camera", -20)
-	pass # Replace with function body.
-
-
-func _on_zona_04_area_entered(area: Area2D) -> void:
-	GlobalCameraConfig.zoom_camera($"../player/camera", 1.5, 1.5)
-	GlobalCameraConfig.move_camera_x($"../player/camera", 0)
-	GlobalCameraConfig.move_camera_y($"../player/camera", 0)
-	pass # Replace with function body.
+func _on_zona_02_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		GlobalCameraConfig.move_camera_x(camera, 100)
+		GlobalCameraConfig.zoom_camera(camera, 1.0, 1.0)
+	pass
