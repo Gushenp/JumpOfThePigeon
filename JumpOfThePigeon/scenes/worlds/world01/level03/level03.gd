@@ -20,3 +20,8 @@ func start_game():
 
 func eliminar_player():
 	$player.eliminar_player()
+
+
+func _on_zona_01_body_entered(body: Node2D) -> void:
+
+	pass

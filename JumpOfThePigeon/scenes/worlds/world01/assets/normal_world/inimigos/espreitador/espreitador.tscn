@@ -65,9 +65,8 @@ fill_to = Vector2(0.18803419, 0.8803419)
 
 [node name="espreitador" type="CharacterBody2D" unique_id=357617616]
 light_mask = 0
+z_index = 4
 script = ExtResource("1_kfdba")
-GRAVITY = null
-distancia_max_direita = null
 distancia_max_esquerda = 100.0
 SPEED = 30.0
 

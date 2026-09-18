@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5pmhsw5x4j7b"]
+
+[ext_resource type="Shader" uid="uid://dsv6fnbr3w6h0" path="res://JumpOfThePigeon/scenes/entidades/player/shaders/trocarRealidade.gdshader" id="1_c83jn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_suirj"]
+shader = ExtResource("1_c83jn")
+shader_parameter/intensity = 0.0
+shader_parameter/blocks = 35.0
+shader_parameter/speed = 20.0
+shader_parameter/flash = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1508187273]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1622821001]
+material = SubResource("ShaderMaterial_suirj")
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 0.99300003
+offset_left = 3.0
+offset_top = 17.0
+offset_right = 2.7679443
+offset_bottom = 17.135986
+metadata/_edit_use_anchors_ = true

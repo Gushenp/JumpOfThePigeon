@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 res://JumpOfThePigeon/scenes/worlds/world01/level04/
+=======
+res://JumpOfThePigeon/scenes/camera/
+>>>>>>> c5dca6b7a3bfdefac14d4dc78d78fda990afb30e
 res://
 res://JumpOfThePigeon/scenes/camera/Script/
 res://JumpOfThePigeon/scenes/areasDeInteracao/Script/
 res://JumpOfThePigeon/scenes/areasDeInteracao/
 res://JumpOfThePigeon/assets/
-res://JumpOfThePigeon/scenes/camera/
 res://JumpOfThePigeon/assets/transitions/
 res://JumpOfThePigeon/scenes/worlds/world01/level01/
