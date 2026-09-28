@@ -1,30 +1,98 @@
 shader_type canvas_item;
 
+// =========================
+// MOVIMENTO DA GRAMA
+// =========================
+
 uniform float amplitude : hint_range(0.0, 20.0) = 5.0;
 uniform float speed     : hint_range(0.0, 5.0)  = 1.5;
 uniform float stiffness : hint_range(0.0, 1.0)  = 0.5;
 
+
+// =========================
+// COR DA NOITE
+// =========================
+
+uniform vec3 cor_noite : source_color = vec3(0.01, 0.03, 0.35);
+uniform float intensidade : hint_range(0.0, 1.0) = 0.9;
+uniform float brilho : hint_range(0.0, 2.0) = 0.8;
+
+
+// =========================
+// MOVIMENTO
+// =========================
+
 void vertex() {
-    // UV.y = 0 no topo do tile (pontas da grama), 1 na base (raiz — imóvel)
-    // Inverte a lógica: agora a BASE fica parada e o TOPO se mexe
+    // Topo se movimenta, base permanece parada
     float sway_factor = (1.0 - UV.y);
     sway_factor = sway_factor * sway_factor * (1.0 - stiffness);
 
-    // Hash barata por tile (mesma técnica otimizada de antes)
-    float tile_seed  = dot(floor(VERTEX / 16.0 + 0.5), vec2(127.1, 311.7));
+    // Seed diferente para cada tile
+    float tile_seed = dot(
+        floor(VERTEX / 16.0 + 0.5),
+        vec2(127.1, 311.7)
+    );
+
     float h1 = fract(tile_seed * 0.1031);
     float h2 = fract((tile_seed + 7.0) * 0.1031 + h1);
 
-    float tile_phase     = h1 * TAU;
+    float tile_phase = h1 * TAU;
     float freq_variation = 0.7 + h2 * 0.6;
 
     float t = TIME * speed * freq_variation;
 
-    // Movimento principal + harmônico suave
-    float wave  = sin(t + tile_phase);
-    float wave2 = sin(t * 1.6 + tile_phase + 0.9) * 0.25;
+    // Movimento principal
+    float wave = sin(t + tile_phase);
 
-    // Grama se move mais no eixo X, com leve achatamento no Y
-    VERTEX.x += (wave + wave2) * amplitude * sway_factor;
-    VERTEX.y += abs(wave) * amplitude * sway_factor * 0.04;
+    // Movimento secundário
+    float wave2 = sin(
+        t * 1.6 + tile_phase + 0.9
+    ) * 0.25;
+
+    // Movimento horizontal
+    VERTEX.x +=
+        (wave + wave2)
+        * amplitude
+        * sway_factor;
+
+    // Pequeno movimento vertical
+    VERTEX.y +=
+        abs(wave)
+        * amplitude
+        * sway_factor
+        * 0.04;
+}
+
+
+// =========================
+// EFEITO NOTURNO
+// =========================
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    // Calcula a luminosidade original da textura
+    float luminancia = dot(
+        tex.rgb,
+        vec3(0.299, 0.587, 0.114)
+    );
+
+    // Cria a versão azul noturna
+    vec3 resultado =
+        cor_noite
+        * luminancia
+        * brilho;
+
+    // Mistura a cor original com a versão noturna
+    resultado = mix(
+        tex.rgb,
+        resultado,
+        intensidade
+    );
+
+    // Mantém a transparência original
+    COLOR = vec4(
+        resultado,
+        tex.a
+    );
 }

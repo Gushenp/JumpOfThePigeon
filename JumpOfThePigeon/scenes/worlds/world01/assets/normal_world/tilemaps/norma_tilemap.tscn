@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://1xkvt0g2l0lg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/shaders/gramineas_x.gdshader" id="2_qxc8h"]
 [ext_resource type="Shader" uid="uid://bo2vhx3h2hjrk" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/shaders/gramineas_y.gdshader" id="3_c160o"]
 [ext_resource type="Shader" uid="uid://b3o5ffab34f5c" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/shaders/pendentes.gdshader" id="3_k3pqb"]
-[ext_resource type="Texture2D" uid="uid://bdyncwds0w2dv" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/mapa_tilemap.png" id="4_oh0tj"]
+[ext_resource type="Texture2D" uid="uid://bdyncwds0w2dv" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/sprites/mapa_tilemap (2).png" id="4_oh0tj"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5ugrq"]
 polygon = PackedVector2Array(-8, -8, -8, 0, -8, 0, -8, 16, 0, 16, 16, 16, 16, -8)

@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b8eltipi1h7gv" path="res://JumpOfThePigeon/scenes/worlds/world01/level01/level01.gd" id="1_jdn3w"]
 [ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/norma_tilemap.tscn" id="1_tef0i"]
-[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/scenes/entidades/player/player.tscn" id="2_xvahj"]
+[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/scenes/globalscenes/entidades/player/player.tscn" id="2_xvahj"]
 [ext_resource type="PackedScene" uid="uid://5pb1rwokd86e" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/particulas/folhas.tscn" id="5_b87j3"]
-[ext_resource type="PackedScene" uid="uid://bhw7wt5yupkkd" path="res://JumpOfThePigeon/scenes/camera/zona_00.tscn" id="6_4a2u4"]
+[ext_resource type="PackedScene" uid="uid://bhw7wt5yupkkd" path="res://JumpOfThePigeon/scenes/globalscenes/camera/zona_00.tscn" id="6_4a2u4"]
 [ext_resource type="PackedScene" uid="uid://dbq8bn46up270" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/background.tscn" id="6_11qv4"]
 [ext_resource type="PackedScene" uid="uid://cnbkajtr1t6hg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/iluminação/luz_global.tscn" id="7_4a2u4"]
-[ext_resource type="PackedScene" uid="uid://bhssxiemorv1m" path="res://JumpOfThePigeon/scenes/areasDeInteracao/area_saida.tscn" id="7_b87j3"]
-[ext_resource type="PackedScene" uid="uid://dtsojdupfmjw5" path="res://JumpOfThePigeon/scenes/areasDeInteracao/eliminacao.tscn" id="9_h8rxm"]
+[ext_resource type="PackedScene" uid="uid://bhssxiemorv1m" path="res://JumpOfThePigeon/scenes/globalscenes/areasDeInteracao/area_saida.tscn" id="7_b87j3"]
+[ext_resource type="PackedScene" uid="uid://dtsojdupfmjw5" path="res://JumpOfThePigeon/scenes/globalscenes/areasDeInteracao/eliminacao.tscn" id="9_h8rxm"]
 [ext_resource type="PackedScene" uid="uid://l18b1u3sutnu" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/iluminação/ponto_de_reflexo.tscn" id="10_syw1h"]
 
 [sub_resource type="Gradient" id="Gradient_d3o83"]

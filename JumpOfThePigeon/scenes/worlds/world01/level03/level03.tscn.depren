@@ -1,0 +1,11 @@
+[gd_scene format=4 uid="uid://dr1dl8wl0vxn2"]
+
+[ext_resource type="Script" uid="uid://o1mfxcsbjvex" path="res://JumpOfThePigeon/scenes/worlds/world01/level03/level03.gd" id="1_nkllf"]
+[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/scenes/globalscenes/entidades/player/player.tscn" id="2_fsfdm"]
+[ext_resource type="PackedScene" uid="uid://dbq8bn46up270" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/background/background.tscn" id="3_f33gj"]
+[ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/norma_tilemap.tscn" id="4_uvckt"]
+[ext_resource type="PackedScene" uid="uid://5pb1rwokd86e" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/particulas/folhas.tscn" id="5_cht8u"]
+[ext_resource type="PackedScene" uid="uid://c748umc4n5rds" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/inimigos/espreitador/espreitador.tscn" id="6_6xjks"]
+[ext_resource type="PackedScene" uid="uid://bhw7wt5yupkkd" path="res://JumpOfThePigeon/scenes/globalscenes/camera/zona_00.tscn" id="6_hfor6"]
+[ext_resource type="PackedScene" uid="uid://cnbkajtr1t6hg" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/iluminação/luz_global.tscn" id="6_xtvmp"]
+[ext_resource type="Script" uid="uid://xcqv8uvv4cu5" path="res://JumpOfThePigeon/scenes/globalscenes/camera/Script/areas_de_camera.gd" id="8_a8ae0"]

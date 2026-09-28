@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://dq4s6uc1tpqf2"]
 
 [ext_resource type="Shader" uid="uid://cliv4cq3j3ujv" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/shaders/gramineas_x.gdshader" id="1_hmaa0"]
+[ext_resource type="Shader" uid="uid://dnhbtovrfyhhh" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/shaders/ambience_shaders.gdshader" id="1_jp4k0"]
 [ext_resource type="Shader" uid="uid://cvaquniffklnt" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/shaders/gramineas_y.gdshader" id="2_0up1t"]
 [ext_resource type="Shader" uid="uid://g2nntjod1s67" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/shaders/pendentes.gdshader" id="3_y4dae"]
-[ext_resource type="Texture2D" uid="uid://nsb2ut4we25" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/mapa_tilemap.png" id="4_1c7iu"]
+[ext_resource type="Texture2D" uid="uid://nsb2ut4we25" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/sprites/mapa_tilemap.png" id="4_1c7iu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mi6j"]
+shader = ExtResource("1_jp4k0")
+shader_parameter/cor_noite = Color(0, 0.40392157, 0.78431374, 1)
+shader_parameter/intensidade = 1.0
+shader_parameter/brilho = 0.7600000361
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5ugrq"]
 polygon = PackedVector2Array(-8, -8, -8, 0, -8, 0, -8, 16, 0, 16, 16, 16, 16, -8)
@@ -194,11 +201,14 @@ terrain_set_0/terrain_0/name = "terreno"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_d3r0w")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c160o"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2lvyl"]
 shader = ExtResource("1_hmaa0")
-shader_parameter/amplitude = 5.5370002630075
-shader_parameter/speed = 1.5350000729125
+shader_parameter/amplitude = 5.0
+shader_parameter/speed = 1.5
 shader_parameter/stiffness = 0.5
+shader_parameter/cor_noite = Color(0, 0.40392157, 0.78431374, 1)
+shader_parameter/intensidade = 0.9
+shader_parameter/brilho = 1.0350000491625
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82fv2"]
 texture = SubResource("CompressedTexture2D_qq0ho")
@@ -218,6 +228,9 @@ shader = ExtResource("2_0up1t")
 shader_parameter/amplitude = 5.0
 shader_parameter/speed = 1.5
 shader_parameter/stiffness = 0.5
+shader_parameter/cor_noite = Color(0, 0.4043932, 0.7827095, 1)
+shader_parameter/intensidade = 1.0
+shader_parameter/brilho = 1.0350000491625
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eeu2t"]
 texture = SubResource("CompressedTexture2D_qq0ho")
@@ -231,11 +244,14 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_eeu2t")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3pqb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jp4k0"]
 shader = ExtResource("3_y4dae")
-shader_parameter/amplitude = 30.0
-shader_parameter/speed = 3.7250001769375
-shader_parameter/stiffness = 0.5750000273125
+shader_parameter/amplitude = 29.0990013822025
+shader_parameter/speed = 2.134000101365
+shader_parameter/stiffness = 0.2590000123025
+shader_parameter/cor_noite = Color(0, 0.40392157, 0.78431374, 1)
+shader_parameter/intensidade = 1.0
+shader_parameter/brilho = 0.9650000458375
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tknk"]
 texture = SubResource("CompressedTexture2D_qq0ho")
@@ -253,6 +269,12 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_01sad"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_4tknk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6g6q"]
+shader = ExtResource("1_jp4k0")
+shader_parameter/cor_noite = Color(0.01, 0.03, 0.35, 1)
+shader_parameter/intensidade = 0.9
+shader_parameter/brilho = 0.8
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrpvi"]
 texture = ExtResource("4_1c7iu")
@@ -410,6 +432,13 @@ terrain_set_0/terrain_0/name = "Terrain 1"
 terrain_set_0/terrain_0/color = Color(0.5, 0.4375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_jrpvi")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2jku"]
+resource_local_to_scene = true
+shader = ExtResource("1_jp4k0")
+shader_parameter/cor_noite = Color(0.04961875, 0.102422945, 0.6858266, 1)
+shader_parameter/intensidade = 1.0
+shader_parameter/brilho = 2.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxc8h"]
 texture = SubResource("CompressedTexture2D_qq0ho")
 texture_region_size = Vector2i(32, 32)
@@ -440,16 +469,17 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_hqtuv")
 
-[node name="normal_tilemap" type="Node2D" unique_id=373199258]
+[node name="other_tilemap" type="Node2D" unique_id=373199258]
 
 [node name="solo" type="TileMapLayer" parent="." unique_id=697564108]
 visibility_layer = 3
 z_index = 5
+material = SubResource("ShaderMaterial_1mi6j")
 tile_set = SubResource("TileSet_c160o")
 
 [node name="gramineas_x" type="TileMapLayer" parent="." unique_id=1557022864]
 z_index = 4
-material = SubResource("ShaderMaterial_c160o")
+material = SubResource("ShaderMaterial_2lvyl")
 tile_set = SubResource("TileSet_r0y3b")
 
 [node name="gramineas_y" type="TileMapLayer" parent="." unique_id=1613191730]
@@ -459,15 +489,17 @@ tile_set = SubResource("TileSet_76asu")
 
 [node name="pendentes" type="TileMapLayer" parent="." unique_id=981553471]
 z_index = 1
-material = SubResource("ShaderMaterial_k3pqb")
+material = SubResource("ShaderMaterial_jp4k0")
 tile_set = SubResource("TileSet_01sad")
 
 [node name="arbustos" type="TileMapLayer" parent="." unique_id=1198152538]
 modulate = Color(0.41981313, 0.41981313, 0.4198131, 1)
 z_index = -1
+material = SubResource("ShaderMaterial_h6g6q")
 tile_set = SubResource("TileSet_36l22")
 
 [node name="espinhos" type="TileMapLayer" parent="." unique_id=665947107]
+material = SubResource("ShaderMaterial_p2jku")
 tile_set = SubResource("TileSet_hqtuv")
 
 [node name="itens" type="TileMapLayer" parent="." unique_id=1061054714]

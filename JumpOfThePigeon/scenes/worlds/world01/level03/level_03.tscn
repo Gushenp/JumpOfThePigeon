@@ -1,0 +1,59 @@
+[gd_scene format=4 uid="uid://6l41bakn6n48"]
+
+[ext_resource type="Script" uid="uid://bls6jtlgf0bbl" path="res://JumpOfThePigeon/scenes/worlds/world01/level03/script/level03.gd" id="1_dxyvx"]
+[ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/normal_world/tilemaps/norma_tilemap.tscn" id="1_op4a4"]
+[ext_resource type="PackedScene" uid="uid://dq4s6uc1tpqf2" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/other_tilemap.tscn" id="2_dxyvx"]
+[ext_resource type="Shader" uid="uid://dnhbtovrfyhhh" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/other_world/tilemaps_other/shaders/ambience_shaders.gdshader" id="3_mpuu3"]
+[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/scenes/globalscenes/entidades/player/player.tscn" id="4_s1u1e"]
+[ext_resource type="PackedScene" uid="uid://c748umc4n5rds" path="res://JumpOfThePigeon/scenes/worlds/world01/assets/independentes/inimigos/espreitador/espreitador.tscn" id="6_mpuu3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpujg"]
+resource_local_to_scene = true
+shader = ExtResource("3_mpuu3")
+shader_parameter/cor_noite = Color(0.04961875, 0.102422945, 0.6858266, 1)
+shader_parameter/intensidade = 1.0
+shader_parameter/brilho = 2.0
+
+[node name="level03" type="Node2D" unique_id=1871834523]
+script = ExtResource("1_dxyvx")
+
+[node name="player" parent="." unique_id=1303017769 instance=ExtResource("4_s1u1e")]
+position = Vector2(99, 272)
+
+[node name="normalMAP" type="Node2D" parent="." unique_id=1013347898]
+
+[node name="normal_tilemap" parent="normalMAP" unique_id=373199258 instance=ExtResource("1_op4a4")]
+
+[node name="solo" parent="normalMAP/normal_tilemap" index="0" unique_id=697564108]
+tile_map_data = PackedByteArray("AAABAAkAAQAAAAAAAAACAAkAAQABAAIAAAADAAkAAQABAAIAAAACAAoAAQACAAIAAAADAAoAAQACAAIAAAAEAAkAAQABAAIAAAABAAoAAQAAAAIAAAABAAsAAQAAAAEAAAACAAsAAQAAAAMAAAADAAsAAQAAAAMAAAAEAAsAAQAAAAMAAAAFAAsAAQAAAAMAAAAFAAoAAQACAAIAAAAFAAkAAQABAAIAAAAEAAoAAQACAAIAAAAGAAkAAQABAAIAAAAHAAkAAQABAAIAAAAHAAoAAQACAAIAAAAHAAsAAQAAAAMAAAAGAAsAAQAAAAMAAAAGAAoAAQACAAIAAAAIAAoAAQABAAMAAAAIAAkAAQABAAAAAAAIAAsAAQABAAEAAAAPAAoAAQAAAAIAAAAPAAsAAQAAAAEAAAAPAAkAAQAAAAAAAAAQAAkAAQABAAIAAAARAAkAAQABAAIAAAARAAoAAQACAAIAAAARAAsAAQAAAAMAAAAQAAsAAQAAAAMAAAAQAAoAAQACAAIAAAASAAoAAQACAAIAAAASAAsAAQAAAAMAAAATAAsAAQAAAAMAAAATAAoAAQACAAIAAAATAAkAAQABAAIAAAASAAkAAQABAAIAAAAUAAoAAQACAAIAAAAUAAkAAQABAAIAAAAUAAsAAQAAAAMAAAAVAAsAAQAAAAMAAAAVAAoAAQACAAIAAAAVAAkAAQABAAIAAAAWAAsAAQABAAEAAAAWAAoAAQABAAMAAAAWAAkAAQABAAAAAAA=")
+
+[node name="gramineas_x" parent="normalMAP/normal_tilemap" index="1" unique_id=1557022864]
+tile_map_data = PackedByteArray("AAABAAgAAAAJAAIAAAACAAgAAAAJAAAAAAADAAgAAAAJAAEAAAAEAAgAAAAJAAIAAAAFAAgAAAAJAAEAAAAGAAgAAAAJAAIAAAAHAAgAAAAJAAIAAAAIAAgAAAAJAAEAAAAJAAgAAAAJAAEAAAAOAAgAAAAJAAEAAAAPAAgAAAAJAAIAAAAQAAgAAAAJAAIAAAARAAgAAAAJAAIAAAASAAgAAAAJAAEAAAATAAgAAAAJAAIAAAAUAAgAAAAJAAEAAAAVAAgAAAAJAAIAAAAWAAgAAAAJAAEAAAA=")
+
+[node name="otherMAP" type="Node2D" parent="." unique_id=1191783835]
+
+[node name="other_tilemap" parent="otherMAP" unique_id=184163838 instance=ExtResource("2_dxyvx")]
+
+[node name="solo" parent="otherMAP/other_tilemap" index="0" unique_id=697564108]
+tile_map_data = PackedByteArray("AAABAAsAAQAAAAEAAAABAAoAAQAAAAIAAAACAAoAAQACAAIAAAACAAkAAQABAAIAAAACAAsAAQAAAAMAAAADAAoAAQACAAIAAAABAAkAAQAAAAAAAAADAAsAAQAAAAMAAAAWAAsAAQABAAEAAAAWAAoAAQABAAMAAAAWAAkAAQABAAAAAAAVAAsAAQAAAAMAAAAVAAoAAQACAAIAAAAVAAkAAQABAAIAAAAUAAsAAQAAAAMAAAAUAAoAAQACAAIAAAAUAAkAAQABAAIAAAATAAsAAQAAAAMAAAATAAoAAQACAAIAAAATAAkAAQABAAIAAAASAAsAAQAAAAMAAAASAAoAAQACAAIAAAASAAkAAQABAAIAAAARAAsAAQAAAAMAAAARAAoAAQACAAIAAAARAAkAAQABAAIAAAAQAAsAAQAAAAMAAAAQAAoAAQACAAIAAAAQAAkAAQABAAIAAAAPAAsAAQAAAAMAAAAPAAoAAQACAAIAAAAPAAkAAQABAAIAAAAOAAsAAQAAAAMAAAAOAAoAAQACAAIAAAAOAAkAAQABAAIAAAANAAsAAQAAAAMAAAANAAoAAQACAAIAAAANAAkAAQABAAIAAAAMAAsAAQAAAAMAAAAMAAoAAQACAAIAAAAMAAkAAQABAAIAAAALAAsAAQAAAAMAAAALAAoAAQACAAIAAAALAAkAAQABAAIAAAAKAAsAAQAAAAMAAAAKAAoAAQACAAIAAAAKAAkAAQABAAIAAAAJAAsAAQAAAAMAAAAJAAoAAQACAAIAAAAJAAkAAQABAAIAAAAIAAsAAQAAAAMAAAAIAAoAAQACAAIAAAAIAAkAAQABAAIAAAAHAAsAAQAAAAMAAAAHAAoAAQACAAIAAAAHAAkAAQABAAIAAAAGAAsAAQAAAAMAAAAGAAoAAQACAAIAAAAGAAkAAQABAAIAAAAFAAsAAQAAAAMAAAAFAAoAAQACAAIAAAAFAAkAAQABAAIAAAAEAAsAAQAAAAMAAAAEAAoAAQACAAIAAAAEAAkAAQABAAIAAAADAAkAAQABAAIAAAA=")
+
+[node name="gramineas_x" parent="otherMAP/other_tilemap" index="1" unique_id=1557022864]
+tile_map_data = PackedByteArray("AAABAAgAAAAJAAEAAAACAAgAAAAJAAIAAAADAAgAAAAJAAIAAAAEAAgAAAAJAAAAAAAFAAgAAAAJAAIAAAAGAAgAAAAJAAEAAAAHAAgAAAAJAAIAAAAIAAgAAAAJAAIAAAAJAAgAAAAJAAIAAAAKAAgAAAAJAAIAAAALAAgAAAAJAAAAAAAMAAgAAAAJAAAAAAANAAgAAAAJAAAAAAAOAAgAAAAJAAIAAAAPAAgAAAAJAAAAAAAQAAgAAAAJAAAAAAARAAgAAAAJAAAAAAASAAgAAAAJAAIAAAATAAgAAAAJAAEAAAAUAAgAAAAJAAIAAAAVAAgAAAAJAAAAAAAWAAgAAAAJAAEAAAA=")
+
+[node name="espinhos" parent="otherMAP/other_tilemap" index="5" unique_id=665947107]
+material = SubResource("ShaderMaterial_gpujg")
+
+[node name="itensIndependentes" type="Node2D" parent="." unique_id=1357684512]
+
+[node name="inimigos" type="Node2D" parent="itensIndependentes" unique_id=597366078]
+
+[node name="espreitadores" type="Node2D" parent="itensIndependentes/inimigos" unique_id=363500953]
+
+[node name="espreitador" parent="itensIndependentes/inimigos" unique_id=357617616 groups=["espreitadores"] instance=ExtResource("6_mpuu3")]
+position = Vector2(643, 258)
+
+[node name="espreitador2" parent="itensIndependentes/inimigos" unique_id=1851187890 groups=["espreitadores"] instance=ExtResource("6_mpuu3")]
+position = Vector2(249, 269)
+
+[editable path="normalMAP/normal_tilemap"]
+[editable path="otherMAP/other_tilemap"]

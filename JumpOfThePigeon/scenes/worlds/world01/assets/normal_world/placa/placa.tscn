@@ -8,7 +8,8 @@
 [ext_resource type="AudioStream" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 1.mp3" id="5_adgxl"]
 [ext_resource type="Texture2D" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/caixa Dialogo/pixil-frame-10.png" id="5_qx2wn"]
 [ext_resource type="AudioStream" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 2.mp3" id="6_yt0lu"]
-[ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/scenes/entidades/player/sounds/aterrisar_ambiente.mp3" id="7_adgxl"]
+[ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/scenes/globalscenes/entidades/player/sounds/aterrisar_ambiente.mp3" id="7_adgxl"]
+
 
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w3qev"]
